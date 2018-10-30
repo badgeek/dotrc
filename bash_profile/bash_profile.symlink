@@ -1,33 +1,20 @@
-export PATH=$PATH:~/.nexustools:~/bin
-
+#SHORTCUT
 alias c="clear"
 alias httpnow="python -m SimpleHTTPServer"
-
-alias ampps="open http://127.0.0.1:8080/ampps"
-alias ampstart="/Applications/AMPPS/apache/bin/httpd -k start; open http://127.0.0.1:8080; /Applications/AMPPS/mysql/bin/mysqld --pid-file=/Applications/AMPPS/var/mysql.pid&"
-alias ampstop="/Applications/AMPPS/mysql/bin/mysqladmin -u root --password=mysql shutdown;/Applications/AMPPS/apache/bin/httpd -k stop"
-
-alias mysqlstart="echo username: root password:mysql;/Applications/AMPPS/mysql/bin/mysqld --pid-file=/Applications/AMPPS/var/mysql.pid&"
-alias mysqlstop="/Applications/AMPPS/mysql/bin/mysqladmin -u root --password=mysql shutdown"
-
 alias projects="cd /Users/xcorex/Documents/Projects"
-
-alias php53="/Applications/AMPPS/php-5.3/bin/php"
-alias php54="/Applications/AMPPS/php-5.4/bin/php"
-alias php55="/Applications/AMPPS/php-5.5/bin/php"
-alias php7="/Applications/MAMP/bin/php/php7.1.8/bin/php"
-alias php="/Applications/MAMP/bin/php/php7.1.8/bin/php"
-
-alias par='php artisan'
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
 alias listusb="ioreg -p IOUSB -w0 | sed 's/[^o]*o //; s/@.*$//' | grep -v '^Root.*'"
-
 alias www="cd /Volumes/LOCALBRAIN/Projects/Web_Projects_htdocs"
-
 alias emacs="/usr/local/bin/emacsclient -ct"
 alias es="/usr/local/bin/emacs --daemon"
-
+alias tower='gittower'
+alias wget='wget -c'
 alias glog="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
-
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -37,52 +24,49 @@ alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
 
+#PYTHON
+export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs
+export PATH="/usr/local/git/bin:${PATH}"
+alias initve="source /usr/local/bin/virtualenvwrapper.sh"
+# Setting PATH for Python 3.4 # The orginal version is saved in .bash_profile.pysave
+export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:${PATH}"
+
+#AMPPS
+alias ampps="open http://127.0.0.1:8080/ampps"
+alias ampstart="/Applications/AMPPS/apache/bin/httpd -k start; open http://127.0.0.1:8080; /Applications/AMPPS/mysql/bin/mysqld --pid-file=/Applications/AMPPS/var/mysql.pid&"
+alias ampstop="/Applications/AMPPS/mysql/bin/mysqladmin -u root --password=mysql shutdown;/Applications/AMPPS/apache/bin/httpd -k stop"
+alias mysqlstart="echo username: root password:mysql;/Applications/AMPPS/mysql/bin/mysqld --pid-file=/Applications/AMPPS/var/mysql.pid&"
+alias mysqlstop="/Applications/AMPPS/mysql/bin/mysqladmin -u root --password=mysql shutdown"
+
+#ANDROID
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH="~/Library/Android/sdk/platform-tools:${PATH}"
+export PATH="/Users/xcorex/Library/Android/sdk/ndk-bundle:${PATH}"
+export PATH=$PATH:~/.nexustools:~/bin
+
+#PHP
+export PATH="${PATH}"
+export PATH="/Applications/MAMP/bin/php/php7.1.8/bin:${PATH}"
+alias php53="/Applications/AMPPS/php-5.3/bin/php"
+alias php54="/Applications/AMPPS/php-5.4/bin/php"
+alias php55="/Applications/AMPPS/php-5.5/bin/php"
+alias php7="/Applications/MAMP/bin/php/php7.1.8/bin/php"
+alias php="/Applications/MAMP/bin/php/php7.1.8/bin/php"
+
+#LARAVEL
+export PATH="~/.composer/vendor/bin/:${PATH}"
 alias g:m="php artisan generate:model"
 alias g:c="php artisan generate:controller"
 alias g:v="php artisan generate:view"
 alias g:s="php artisan generate:seed"
 alias g:mig="php artisan generate:migration"
 alias g:r="php artisan generate:resource"
+alias par='php artisan'
 
-alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
-
-alias tower='gittower'
-
-## this one saved by butt so many times ##
-alias wget='wget -c'
-
-#python
-export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs
-PATH="/usr/local/git/bin:${PATH}"
-alias initve="source /usr/local/bin/virtualenvwrapper.sh"
-# Setting PATH for Python 3.4 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
-PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:${PATH}"
-
-#android sdk osx
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-#PATH="/Users/xcorex/Library/Android/sdk/ant/bin:${PATH}"
-PATH="~/Library/Android/sdk/platform-tools:${PATH}"
-#PATH="/Users/manticore/Android/sdk/tools:${PATH}"
-#PATH="/Users/xcorex/Documents/Projects/Android/sdk/android-sdk-macosx/tools:${PATH}"
-#PATH="/Users/xcorex/Documents/Projects/Android/sdk/android-sdk-macosx/platform-tools:${PATH}"
-PATH="/Users/xcorex/Library/Android/sdk/ndk-bundle:${PATH}"
-
-#laravel
-PATH="~/.composer/vendor/bin/:${PATH}"
-
-#php
-export PATH="${PATH}"
-export PATH="/Applications/MAMP/bin/php/php7.1.8/bin:${PATH}"
 
 
