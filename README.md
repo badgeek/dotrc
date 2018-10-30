@@ -9,7 +9,8 @@
 # Install
 
 ```
-
+brew tap jesseduffield/lazygit
+brew install lazygit
 brew install chunkwm
 brew install skhd
 brew install devd
