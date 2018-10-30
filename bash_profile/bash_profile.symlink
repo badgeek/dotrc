@@ -74,5 +74,7 @@ alias par='php artisan'
 
 #ADDONS
 source ~/.local/bin/bashmarks.sh
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+
 
 
