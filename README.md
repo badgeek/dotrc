@@ -5,6 +5,8 @@
   * bashmarks
   * kitty
   * chunkwm
+  * howdoi
+  * cash-cli
 
 # Install
 
