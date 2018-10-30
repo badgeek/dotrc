@@ -23,6 +23,7 @@ alias gd='git diff'
 alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
+alias freeram='sudo purge'
 
 #PYTHON
 export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs
@@ -69,4 +70,6 @@ alias g:r="php artisan generate:resource"
 alias par='php artisan'
 
 
+#ADDONS
+source ~/.local/bin/bashmarks.sh
 
