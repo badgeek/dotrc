@@ -2,7 +2,7 @@ cat ~/dotfiles/MOTD.txt
 
 #SHORTCUT
 alias c="clear"
-alias httpnow="python -m SimpleHTTPServer"
+alias httpnow="devd -ol ."
 alias projects="cd /Users/xcorex/Documents/Projects"
 alias ..='cd ..'
 alias ...='cd ../../../'
