@@ -28,7 +28,7 @@ alias gx='gitx --all'
 alias freeram='sudo purge'
 alias restartwm='brew services restart chunkwm'
 alias updatedot='subl ~/dotfiles'
-
+alias motd='cat ~/dotfiles/MOTD.txt'
 
 #PYTHON
 export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs

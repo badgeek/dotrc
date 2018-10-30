@@ -74,6 +74,7 @@ chunkc core::load tiling.so
 # chunkc tiling::rule --owner \"Sublime Text\" --state float
 # chunkc tiling::rule --owner Safari --state float
 chunkc tiling::rule --owner Finder --state float
+chunkc tiling::rule --owner Twitter --state float
 chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner Finder --name Move --state float
 chunkc tiling::rule --owner Finder --name Info --state float
