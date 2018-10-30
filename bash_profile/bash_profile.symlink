@@ -1,3 +1,5 @@
+cat ~/dotfiles/MOTD.txt
+
 #SHORTCUT
 alias c="clear"
 alias httpnow="python -m SimpleHTTPServer"
@@ -72,4 +74,5 @@ alias par='php artisan'
 
 #ADDONS
 source ~/.local/bin/bashmarks.sh
+
 
