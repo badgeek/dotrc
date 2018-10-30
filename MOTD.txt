@@ -1,0 +1,14 @@
+
+ __   __     .    __    _  _______ _   ___    ___   .___  .____ 
+ |    |     /|    |\   |  '   /    | .'   \ .'   `. /   \ /     
+ |\  /|    /  \   | \  |      |    | |      |     | |__-' |__.  
+ | \/ |   /---'\  |  \ |      |    | |      |     | |  \  |     
+ /    / ,'      \ |   \|      /    /  `.__,  `.__.' /   \ /----/
+                                                                
+
+  * AMPPS > ampps ampstart ampstop mysqlstart mysqlstop
+  * GIT > ga gb gc gs glog
+  * PHP > php53 php54 php55 php7 php
+  * LARAVEL > g:m g:c g:v
+  * BASHMARKS > s g p d l
+
