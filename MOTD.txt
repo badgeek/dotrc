@@ -11,4 +11,6 @@
   * PHP > php53 php54 php55 php7 php
   * LARAVEL > g:m g:c g:v
   * BASHMARKS > s g p d l
+  * DOTFILES > updatedot
+
 
