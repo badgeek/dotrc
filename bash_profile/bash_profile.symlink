@@ -32,6 +32,8 @@ alias restartwm='brew services restart chunkwm'
 alias updatedot='subl ~/dotfiles'
 alias motd='cat ~/dotfiles/MOTD.txt'
 alias gt="g \$(l | fzf | awk '{print substr(\$1,8);'})"
+alias hist="\$(cat ~/.bash_history | fzf)"
+alias cdf="cd \$(ls -d */ | fzf)"
 
 #PYTHON
 export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs

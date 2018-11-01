@@ -12,6 +12,7 @@
   * LARAVEL > g:m g:c g:v
   * BASHMARKS > s g p d l
   * YOLO > howdoi cash wunderline lazygit pet
+  		 > gt hist cdf
   * DOTFILES > updatedot
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * 
