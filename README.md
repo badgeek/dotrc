@@ -7,6 +7,10 @@
   * chunkwm
   * howdoi
   * cash-cli
+  * fzf
+  * pet
+  * vtop
+  * wunderline
 
 # Install
 
