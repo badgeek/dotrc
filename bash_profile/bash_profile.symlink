@@ -27,10 +27,11 @@ alias gk='gitk --all&'
 alias gx='gitx --all'
 alias gcm='git commit -m'
 alias gpom='git push origin master'
-alias freeram='sudo purge'
+alias f='sudo purge'
 alias restartwm='brew services restart chunkwm'
 alias updatedot='subl ~/dotfiles'
 alias motd='cat ~/dotfiles/MOTD.txt'
+alias gt="g \$(l | fzf | awk '{print substr(\$1,8);'})"
 
 #PYTHON
 export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs
