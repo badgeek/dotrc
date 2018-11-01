@@ -34,6 +34,7 @@ alias motd='cat ~/dotfiles/MOTD.txt'
 alias gt="g \$(l | fzf | awk '{print substr(\$1,8);'})"
 alias hist="\$(cat ~/.bash_history | fzf)"
 alias cdf="cd \$(ls -d */ | fzf)"
+alias lgit="lazygit"
 
 #PYTHON
 export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs
