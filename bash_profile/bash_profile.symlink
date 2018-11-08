@@ -91,6 +91,7 @@ alias asc="adb shell screencap -p /sdcard/screen.png;adb pull /sdcard/screen.png
 source ~/.local/bin/bashmarks.sh
 
 #ADDONS LIQUIDPROMPT
+export LP_USER_ALWAYS=0
 export LP_ENABLE_SHORTEN_PATH=1
 export LP_PATH_LENGTH=8
 export LP_PATH_KEEP=1
