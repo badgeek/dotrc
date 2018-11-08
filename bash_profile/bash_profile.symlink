@@ -84,6 +84,8 @@ alias par='php artisan'
 #WORKCODEMI
 alias c:c="subl /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/containers/\$(ls /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/containers/ | fzf)"
 alias c:cp="subl /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/components/\$(ls /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/components/ | fzf)"
+alias c:all="subl /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/"
+alias c:start="cd /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/; yarn start"
 alias fe="g codemife"
 alias asc="adb shell screencap -p /sdcard/screen.png;adb pull /sdcard/screen.png;adb shell rm /sdcard/screen.png"
 

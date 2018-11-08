@@ -13,6 +13,7 @@
   * BASHMARKS > s g p d l
   * YOLO > howdoi cash wunderline lazygit pet
   		 > gt hist cdf lgit
+  * CODEMI > c:c c:p c:all c:start
   * DOTFILES > updatedot
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * 
