@@ -34,7 +34,8 @@ alias motd='cat ~/dotfiles/MOTD.txt'
 alias gt="g \$(l | fzf | awk '{print substr(\$1,8);'})"
 alias hist="\$(cat ~/.bash_history | fzf)"
 alias cdf="cd \$(ls -d */ | fzf)"
-alias lgit="lazygit"
+alias lg="lazygit"
+alias q='chunkc tiling::window --close'
 
 #PYTHON
 export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs
@@ -80,10 +81,18 @@ alias g:mig="php artisan generate:migration"
 alias g:r="php artisan generate:resource"
 alias par='php artisan'
 
+#WORKCODEMI
+alias c:c="subl /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/containers/\$(ls /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/containers/ | fzf)"
+alias c:cp="subl /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/components/\$(ls /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/components/ | fzf)"
+alias fe="g codemife"
+alias asc="adb shell screencap -p /sdcard/screen.png;adb pull /sdcard/screen.png;adb shell rm /sdcard/screen.png"
 
-#ADDONS
+#ADDONS BASHMARK
 source ~/.local/bin/bashmarks.sh
+
+#ADDONS LIQUIDPROMPT
+export LP_ENABLE_SHORTEN_PATH=1
+export LP_PATH_LENGTH=8
+export LP_PATH_KEEP=1
 [[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
-
-
 
