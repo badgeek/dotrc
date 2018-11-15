@@ -1,0 +1,5 @@
+#!/bin/bash
+IP_ADDRESS=`ipconfig getifaddr en1`
+cd /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2
+ag -l "localhost"  --ignore "prod.js" --ignore "ThemeProviderContainer/index.js" | xargs sed -i '' -e "s/localhost/$IP_ADDRESS/g"
+yarn start

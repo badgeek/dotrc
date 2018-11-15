@@ -1,8 +1,9 @@
 #!/bin/bash
 
 STASH_LIST=`ag "$1" ./ | fzf | cut -d':' -f -1 `
-STASH_LIST=`dirname $STASH_LIST`
 if [ -n "$STASH_LIST" ] ; then
-    subl "$STASH_LIST"
+	STASH_DIR=`dirname $STASH_LIST`
+    subl "$STASH_DIR"
+    subl "$STASH_LIST"    
 fi
 
