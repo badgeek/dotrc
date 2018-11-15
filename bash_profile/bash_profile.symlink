@@ -1,5 +1,8 @@
 cat ~/dotfiles/MOTD.txt
 
+#PATH
+export PATH="~/dotfiles/bin/:${PATH}"
+
 #SHORTCUT
 alias c="clear"
 alias httpnow="devd -ol ."
