@@ -36,6 +36,7 @@ alias hist="\$(cat ~/.bash_history | fzf)"
 alias cdf="cd \$(ls -d */ | fzf)"
 alias lg="lazygit"
 alias q='chunkc tiling::window --close'
+alias stash='sh ~/dotfiles/bin/stash-apply.sh'
 
 #PYTHON
 export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs
