@@ -9,10 +9,55 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'alvan/vim-closetag'
+Plug 'Valloric/MatchTagAlways'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'mhinz/vim-signify'
+"Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'itchyny/lightline.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ryanoasis/vim-devicons'
+Plug 'KeitaNakamura/neodark.vim'
+
 
 call plug#end()
 
-color dracula
+set mouse=a
+color neodark
+set encoding=UTF-8
+
+" Lightlinw
+set laststatus=2
+if !has('gui_running')
+  set t_Co=256
+endif
+set noshowmode
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
+set guifont=DroidSansMono_Nerd_Font:h11
 
 
 " Use Vim settings, rather then Vi settings (much better!).
@@ -48,7 +93,7 @@ syntax on
 " That means all \x commands turn into ,x
 " The mapleader has to be set before vundle starts loading all
 " the plugins.
-let mapleader=","
+let mapleader=" "
 
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundles.vim
