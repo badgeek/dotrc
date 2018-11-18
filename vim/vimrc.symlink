@@ -42,7 +42,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'sheerun/vim-polyglot'
-
+Plug 'tpope/vim-fugitive'
 
 Plug 'joshdick/onedark.vim'
 
