@@ -1,0 +1,89 @@
+snippet "Reactjs Map array to component"
+{items.map(
+	item => <TodoItem item={item} key={item.key} />
+)}
+endsnippet
+
+snippet "Reactjs propTypes"
+$1.propTypes = {
+  //email:      PropTypes.string,
+  //seats:      PropTypes.number,
+  //callback:   PropTypes.func,
+  //isClosed:   PropTypes.bool,
+  //any:        PropTypes.any
+}
+endsnippet
+
+snippet "Reactjs default props"
+$1.defaultProps = {
+    $2:$3
+};
+endsnippet
+
+snippet "Js ES6 filter array example"
+var numbers = [1,2,3,4,5,6,7,8,9,10];
+// ES6
+const evenNumbers = numbers.filter(num => {
+  return num % 2 === 0
+});
+endsnippet
+
+
+snippet "Reactjs Choose When then otherwise render"
+<Choose>
+  <When condition={ $1 }>
+  	$2
+  </When>
+  <Otherwise>
+  	$3
+  </Otherwise>
+<Choose>
+endsnippet
+
+snippet "Reactjs Choose When render"
+<When condition={ $1 }>
+	$2
+</When>
+endsnippet
+
+snippet "Reactjs Styled Component tag"
+const $1 = styled.$2`
+	$3
+`;
+endsnippet
+
+snippet "Reactjs Styled Component jsx"
+const $1Styled = styled($1)\`
+	$2
+\`;
+endsnippet
+
+
+snippet "Reactjs Function handle callback"
+handle$1 = ($2) => {
+	//this.setState({key:value})
+	$3
+}
+endsnippet
+
+snippet "Reactjs For loop render" 
+<For each="$1" index="$2" of={$3}>
+	$4
+</For>
+endsnippet
+
+snippet "Reactjs If Conditional render" 
+<If condition={$1}>
+	$2
+</If>
+endsnippet
+
+snippet "Reactjs function arrow"
+$1 = ($2) => {
+	$3
+}
+endsnippet
+
+snippet "Reactjs export default"
+export default $1;
+endsnippet
