@@ -1,8 +1,8 @@
 snippet "Bash Check file exist func"
 function check_file_exists()
 {
-	local _FILE_NAME=${1}	
-	if [ -f "${_FILE_NAME}" ]
+	local _FILE_NAME=\${1}	
+	if [ -f "\${_FILE_NAME}" ]
 	then
 		return 0 #true
 	else
@@ -14,8 +14,8 @@ endsnippet
 snippet "Bash Check dir exist func"
 function check_dir_exists()
 {
-	local _FILE_NAME=${1}	
-	if [ -d "${_FILE_NAME}" ]
+	local _FILE_NAME=\${1}	
+	if [ -d "\${_FILE_NAME}" ]
 	then
 		return 0 #true
 	else
@@ -27,7 +27,7 @@ endsnippet
 snippet "Bash function"
 function $1()
 {
-	#local _PARAM_1=${1}
+	#local _PARAM_1=\${1}
 	$2
 }
 endsnippet
@@ -46,8 +46,8 @@ CWD=$(pwd)
 endsnippet
 
 snippet "Bash if variable not empty"
-if [ -n "$LATEST_BUILD" ] ; then
-
+if [ -n "\$LATEST_BUILD" ] ; then
+	$1
 fi
 endsnippet
 
@@ -57,7 +57,7 @@ $1+=('value 1')
 $1+=('value 2') 
 $1+=('value 2') 
 
-for $2 in "${$1[@]}"
+for $2 in "\${$1[@]}"
 do
     echo "[OK] Agent \${$2} enabled"
 done

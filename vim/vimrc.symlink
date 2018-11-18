@@ -23,7 +23,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
 Plug 'Valloric/MatchTagAlways'
@@ -196,7 +196,24 @@ set smartcase       " ...unless we type a capital
 set runtimepath+=~/dotfiles/my-snippets/
 let g:UltiSnipsSnippetsDir="~/dotfiles/my-snippets"
 let g:UltiSnipsSnippetDirectories=["my-snippets", "UltiSnips"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 autocmd BufRead,BufNewFile,BufEnter *.js UltiSnipsAddFiletypes custom-js
+autocmd BufRead,BufNewFile,BufEnter *.sh UltiSnipsAddFiletypes bash-sh
+nnoremap <Leader><Tab> <esc>:Snippets<cr>
+inoremap <Leader><Tab> <esc>:Snippets<cr>
+cnoremap <Leader><Tab> <esc>:Snippets<cr>
+
+
+fun! s:DetectShebang()
+    if getline(1) == '#!/usr/bin/env node'
+        UltiSnipsAddFiletypes bash-sh
+    endif
+endfun
+
+autocmd BufNewFile,BufRead * call s:DetectShebang()
+
 
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 noremap <Leader>w :write<CR>
@@ -204,9 +221,6 @@ noremap <Leader>t :Tagbar<CR>
 noremap <Leader>s :Snippets<CR>
 noremap <Leader>qq :q<CR>
 
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
 
 colorscheme onedark
 let g:prettier#autoformat = 0
@@ -220,19 +234,16 @@ let NERDTreeMapOpenInTab='<ENTER>'
 nnoremap H gT
 nnoremap L gt
 
-nnoremap <A-F1> 1gt
-nnoremap <A-F2> 2gt
-nnoremap <A-F3> 3gt
-nnoremap <A-F4> 4gt
-nnoremap <A-F5> 5gt
-nnoremap <A-F6> 6gt
-nnoremap <A-F7> 7gt
-nnoremap <A-F8> 8gt
-nnoremap <A-F9> 9gt
-nnoremap <A-F0> 10gt
-
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+nnoremap <Leader><1> 1gt
+nnoremap <Leader><2> 2gt
+nnoremap <Leader><3> 3gt
+nnoremap <Leader><4> 4gt
+nnoremap <Leader><5> 5gt
+nnoremap <Leader><6> 6gt
+nnoremap <Leader><7> 7gt
+nnoremap <Leader><8> 8gt
+nnoremap <Leader><9> 9gt
+nnoremap <Leader><0> 10gt
 
 "" Search and Substitute
 set gdefault " use global flag by default in s: commands
