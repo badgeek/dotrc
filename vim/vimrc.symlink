@@ -6,11 +6,24 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+if has('python3')                                                                                                 
+   set pyx=3                                                                     
+else                                                                            
+   set pyx=2                                                                     
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+"Plug 'w0rp/ale'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
+
 Plug 'mattn/emmet-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
@@ -28,12 +41,14 @@ Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
 Plug 'KeitaNakamura/neodark.vim'
+Plug 'sheerun/vim-polyglot'
 
+
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
 set mouse=a
-color neodark
 set encoding=UTF-8
 
 " Lightlinw
@@ -43,11 +58,18 @@ if !has('gui_running')
 endif
 set noshowmode
 
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 
 let g:user_emmet_leader_key='<Tab>'
@@ -177,3 +199,20 @@ set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
 " so ~/.yadr/vim/settings.vim
+"
+nnoremap <Leader>f :NERDTreeToggle<Enter>
+noremap <Leader>w :write<CR>
+noremap <Leader>t :Tagbar<CR>
+noremap <Leader>s :Snippets<CR>
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+colorscheme onedark
+let g:prettier#autoformat = 0
+let g:prettier#exec_cmd_async = 1
+let g:prettier#quickfix_auto_focus = 0
+
+
+
