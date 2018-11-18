@@ -22,5 +22,7 @@ brew install skhd
 brew install devd
 brew services start chunkwm
 brew services start skhd
-
+brew install vim
+brew install neovim
+brew install tmux
 ```

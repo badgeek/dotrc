@@ -196,7 +196,7 @@ set smartcase       " ...unless we type a capital
 set runtimepath+=~/dotfiles/my-snippets/
 let g:UltiSnipsSnippetsDir="~/dotfiles/my-snippets"
 let g:UltiSnipsSnippetDirectories=["my-snippets", "UltiSnips"]
-autocmd BufRead,BufNewFile,BufEnter *.js UltiSnipsAddFiletypes custom-test
+autocmd BufRead,BufNewFile,BufEnter *.js UltiSnipsAddFiletypes custom-js
 
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 noremap <Leader>w :write<CR>
