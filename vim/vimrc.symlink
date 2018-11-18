@@ -12,6 +12,7 @@ else
    set pyx=2                                                                     
 endif
 
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -22,15 +23,12 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-
-
 Plug 'mattn/emmet-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
 Plug 'Valloric/MatchTagAlways'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'mhinz/vim-signify'
-"Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
@@ -43,8 +41,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
-
+"Plug 'styled-components/vim-styled-components'
 Plug 'joshdick/onedark.vim'
+"Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
@@ -116,15 +115,6 @@ syntax on
 " The mapleader has to be set before vundle starts loading all
 " the plugins.
 let mapleader=" "
-
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
-endif
-au BufNewFile,BufRead *.vundle set filetype=vim
-
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
@@ -200,19 +190,53 @@ set smartcase       " ...unless we type a capital
 " ================ Custom Settings ========================
 " so ~/.yadr/vim/settings.vim
 "
+"
+
+" Custom snippets config
+set runtimepath+=~/dotfiles/my-snippets/
+let g:UltiSnipsSnippetsDir="~/dotfiles/my-snippets"
+let g:UltiSnipsSnippetDirectories=["my-snippets", "UltiSnips"]
+autocmd BufRead,BufNewFile,BufEnter *.js UltiSnipsAddFiletypes custom-test
+
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 noremap <Leader>w :write<CR>
 noremap <Leader>t :Tagbar<CR>
 noremap <Leader>s :Snippets<CR>
+noremap <Leader>qq :q<CR>
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
 colorscheme onedark
 let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
 let g:prettier#quickfix_auto_focus = 0
 
+set clipboard=unnamed
 
+let NERDTreeMapOpenInTab='<ENTER>'
 
+nnoremap H gT
+nnoremap L gt
+
+nnoremap <A-F1> 1gt
+nnoremap <A-F2> 2gt
+nnoremap <A-F3> 3gt
+nnoremap <A-F4> 4gt
+nnoremap <A-F5> 5gt
+nnoremap <A-F6> 6gt
+nnoremap <A-F7> 7gt
+nnoremap <A-F8> 8gt
+nnoremap <A-F9> 9gt
+nnoremap <A-F0> 10gt
+
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+
+"" Search and Substitute
+set gdefault " use global flag by default in s: commands
+set hlsearch " highlight searches
+set ignorecase
+set smartcase " don't ignore capitals in searches
+nnoremap <leader><space> :nohls <enter>
