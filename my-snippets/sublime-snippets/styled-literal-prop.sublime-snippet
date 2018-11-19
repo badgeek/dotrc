@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+${1:property}: \${props => props.theme.${2:value}};
+]]></content>
+<tabTrigger></tabTrigger>
+<description>ReactJS styled component literal prop</description>
+<scope>source.js</scope>
+</snippet>
