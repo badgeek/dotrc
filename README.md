@@ -14,6 +14,8 @@
 
 # Install
 
+place dotfiles folder in ~/dotfiles
+
 ```
 brew tap jesseduffield/lazygit
 brew install lazygit
