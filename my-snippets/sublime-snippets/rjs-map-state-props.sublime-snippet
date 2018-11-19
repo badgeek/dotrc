@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+const mapStateToProps = createStructuredSelector(
+  {
+    //company: currentCompany,
+    //isCompanyReady: (state) => currentUserData(state).isCompanyReady,
+  },
+);
+ends
+]]></content>
+<tabTrigger></tabTrigger>
+<description>ReactJS redux map state to props</description>
+<scope>source.js</scope>
+</snippet>

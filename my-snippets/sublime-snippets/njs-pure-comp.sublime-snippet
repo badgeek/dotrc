@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+const $1 = () => (
+	<div>
+		<div className="bar"></div>
+	</div>
+)
+
+export default $1;
+
+]]></content>
+<tabTrigger></tabTrigger>
+<description>NextJS pure component =></description>
+<scope>source.js, storage.type.js</scope>
+</snippet>

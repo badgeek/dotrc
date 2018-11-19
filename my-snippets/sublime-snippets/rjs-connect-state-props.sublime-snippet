@@ -1,0 +1,8 @@
+<snippet>
+<content><![CDATA[
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+]]></content>
+<tabTrigger></tabTrigger>
+<description>ReactJS connect state to props redux</description>
+<scope>source.js</scope>
+</snippet>

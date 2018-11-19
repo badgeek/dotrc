@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+import App, {Container} from 'next/app';
+
+class $1 extends App {
+	
+	const { component } = this.props;
+
+	return(
+		<Container>
+			
+		</Container>
+	)
+
+}
+
+export default $1;
+]]></content>
+<tabTrigger></tabTrigger>
+<description>NextJS App Class Template</description>
+<scope>source.js, keyword.operator.module.js</scope>
+</snippet>

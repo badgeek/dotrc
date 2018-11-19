@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+const $1 = styled.$2`
+	$3
+`;
+]]></content>
+<tabTrigger></tabTrigger>
+<description>ReactJS styled-component tag element</description>
+<scope>source.js</scope>
+</snippet>

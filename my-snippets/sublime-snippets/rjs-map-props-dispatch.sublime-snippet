@@ -1,0 +1,12 @@
+<snippet>
+<content><![CDATA[
+function mapDispatchToProps(dispatch) {
+  return {
+    //applicationLoading: (isLoading) => dispatch(applicationLoading(isLoading)),
+  };
+}
+]]></content>
+<tabTrigger></tabTrigger>
+<description>ReactJS redux map props to dispatch</description>
+<scope>source.js</scope>
+</snippet>

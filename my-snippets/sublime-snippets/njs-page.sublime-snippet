@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-import $1 from 'next/link';
+import App, {Container} from 'next/app';
 
-const Home = props => (
+const $1 = props => (
 	<div>
 
 	</div>
 )
 
-export default Home;
+export default $1;
 
 ]]></content>
 <tabTrigger></tabTrigger>

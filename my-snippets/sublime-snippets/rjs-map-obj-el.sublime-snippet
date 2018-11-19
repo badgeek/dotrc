@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+{$1.map(
+	item => <${2:Element} item={item} key={item.key} />
+)}
+]]></content>
+<tabTrigger></tabTrigger>
+<description>ReactJS Map object to element</description>
+<scope>source.js</scope>
+</snippet>

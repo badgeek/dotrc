@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+<Choose>
+  <When condition={$1}>
+  	$2
+  </When>
+  <Otherwise>
+  	$3
+  </Otherwise>
+</Choose>
+]]></content>
+<tabTrigger></tabTrigger>
+<description>ReactJS choose when otherwise render</description>
+<scope>source.js</scope>
+</snippet>

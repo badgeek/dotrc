@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+<For each="$1" index="$2" of={$3}>
+	$4
+</For>
+]]></content>
+<tabTrigger></tabTrigger>
+<description>ReactJS for loop render</description>
+<scope>source.js</scope>
+</snippet>

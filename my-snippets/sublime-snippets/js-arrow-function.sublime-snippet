@@ -1,0 +1,10 @@
+<snippet>
+<content><![CDATA[
+$1 = ($2) => {
+	$3
+}
+]]></content>
+<tabTrigger></tabTrigger>
+<description>Js es6 arrow function</description>
+<scope>source.js</scope>
+</snippet>
