@@ -11,6 +11,7 @@
   * pet
   * vtop
   * wunderline
+  * sublime snippet maker
 
 # Install
 
