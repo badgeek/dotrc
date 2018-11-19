@@ -159,6 +159,8 @@ fi
 # setup_gitconfig
 install_dotfiles
 # install_homebrew
+link_file "$DOTFILES_ROOT/my-snippets/sublime-snippets" "/Users/xcorex/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
+link_file "$DOTFILES_ROOT/sublime/Default (OSX).sublime-keymap" "/Users/xcorex/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap"
 
 
 echo ''
