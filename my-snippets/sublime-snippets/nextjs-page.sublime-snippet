@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+import $1 from 'next/link';
+
+const Home = props => (
+	<div>
+
+	</div>
+)
+
+export default Home;
+
+]]></content>
+<tabTrigger></tabTrigger>
+<description>NextJS basic page template</description>
+<scope>source.js</scope>
+</snippet>
