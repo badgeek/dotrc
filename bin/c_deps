@@ -1,0 +1,31 @@
+#!/bin/sh
+# React dependency hell crawler
+
+MADGE_BIN=/Volumes/LOCALBRAIN/Projects/Codemi/madge/bin/cli.js
+QUTE_BIN=/Applications/qutebrowser.app/Contents/MacOS/qutebrowser
+CODEMI_FE=/Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2
+GRAPH_TEMP=$(mktemp $TMPDIR$(uuidgen).svg)
+CWD=`pwd`
+
+if [ -n "$1" ] ; then
+STASH_LIST=`ag "$1" ./ | fzf | cut -d':' -f -1 `
+if [ -n "$STASH_LIST" ] ; then
+	STASH_DIR=`dirname $STASH_LIST` 	
+    echo ":: Dependency Crawler :: $STASH_DIR" 	
+	${MADGE_BIN} -b ${CODEMI_FE}/app ${CODEMI_FE}/$STASH_DIR --image ${GRAPH_TEMP}
+	${QUTE_BIN} ${GRAPH_TEMP}
+fi
+exit
+fi
+
+FZF_SELECT=`echo "components\ncontainers" | fzf`
+if [ -n "$FZF_SELECT" ] ; then
+  FZF_SELECT_DIR=`ls $CODEMI_FE/app/$FZF_SELECT/ | fzf`
+  if [ -n "$FZF_SELECT_DIR" ] ; then 
+  	  FZF_SELECT_DIR=$CODEMI_FE/app/$FZF_SELECT/$FZF_SELECT_DIR
+	  echo ":: Dependency Crawler :: $FZF_SELECT_DIR" 
+	  ${MADGE_BIN} -b ${CODEMI_FE}/app ${FZF_SELECT_DIR} --image ${GRAPH_TEMP}  
+	  ${QUTE_BIN} ${GRAPH_TEMP}  
+  fi
+  exit
+fi
