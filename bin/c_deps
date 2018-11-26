@@ -8,6 +8,8 @@ GRAPH_TEMP=$(mktemp $TMPDIR$(uuidgen).svg)
 CWD=`pwd`
 
 if [ -n "$1" ] ; then
+while true
+do
 cd $CODEMI_FE
 STASH_LIST=`ag "$1" ./ | fzf | cut -d':' -f -1 `
 if [ -n "$STASH_LIST" ] ; then
@@ -17,10 +19,13 @@ if [ -n "$STASH_LIST" ] ; then
 	${QUTE_BIN} ${GRAPH_TEMP}
 fi
 cd $CWD
+done
 exit
 fi
 
 FZF_SELECT=`echo "components\ncontainers" | fzf`
+while true
+do
 if [ -n "$FZF_SELECT" ] ; then
   FZF_SELECT_DIR=`ls $CODEMI_FE/app/$FZF_SELECT/ | fzf`
   if [ -n "$FZF_SELECT_DIR" ] ; then 
@@ -29,5 +34,5 @@ if [ -n "$FZF_SELECT" ] ; then
 	  ${MADGE_BIN} -b ${CODEMI_FE}/app ${FZF_SELECT_DIR} --image ${GRAPH_TEMP}  
 	  ${QUTE_BIN} ${GRAPH_TEMP}  
   fi
-  exit
 fi
+done
