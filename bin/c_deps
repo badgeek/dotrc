@@ -8,6 +8,7 @@ GRAPH_TEMP=$(mktemp $TMPDIR$(uuidgen).svg)
 CWD=`pwd`
 
 if [ -n "$1" ] ; then
+cd $CODEMI_FE
 STASH_LIST=`ag "$1" ./ | fzf | cut -d':' -f -1 `
 if [ -n "$STASH_LIST" ] ; then
 	STASH_DIR=`dirname $STASH_LIST` 	
@@ -15,6 +16,7 @@ if [ -n "$STASH_LIST" ] ; then
 	${MADGE_BIN} -b ${CODEMI_FE}/app ${CODEMI_FE}/$STASH_DIR --image ${GRAPH_TEMP}
 	${QUTE_BIN} ${GRAPH_TEMP}
 fi
+cd $CWD
 exit
 fi
 
