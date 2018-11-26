@@ -1,4 +1,4 @@
-cat ~/dotfiles/MOTD.txt
+cat ~/dotfiles/MOTD.txt 
 
 #PATH
 export PATH="~/dotfiles/bin/:${PATH}"
@@ -25,7 +25,7 @@ alias ga='git add '
 alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
-alias go='git checkout '
+alias gco='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias gcm='git commit -m'
@@ -40,6 +40,7 @@ alias cdf="cd \$(ls -d */ | fzf)"
 alias lg="lazygit"
 alias q='chunkc tiling::window --close'
 alias stash='sh ~/dotfiles/bin/stash-apply.sh'
+alias reloadsh='source ~/.bash_profile'
 
 #PYTHON
 export WORKON_HOME=/Users/xcorex/Documents/Projects/Python/Envs
@@ -76,22 +77,27 @@ alias php7="/Applications/MAMP/bin/php/php7.1.8/bin/php"
 alias php="/Applications/MAMP/bin/php/php7.1.8/bin/php"
 
 #LARAVEL
-export PATH="~/.composer/vendor/bin/:${PATH}"
-alias g:m="php artisan generate:model"
-alias g:c="php artisan generate:controller"
-alias g:v="php artisan generate:view"
-alias g:s="php artisan generate:seed"
-alias g:mig="php artisan generate:migration"
-alias g:r="php artisan generate:resource"
-alias par='php artisan'
+#export PATH="~/.composer/vendor/bin/:${PATH}"
+#alias g:m="php artisan generate:model"
+#alias g:c="php artisan generate:controller"
+#alias g:v="php artisan generate:view"
+#alias g:s="php artisan generate:seed"
+#alias g:mig="php artisan generate:migration"
+#alias g:r="php artisan generate:resource"
+#alias par='php artisan'
 
 #WORKCODEMI
 alias c:c="subl /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/containers/\$(ls /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/containers/ | fzf)"
 alias c:cp="subl /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/components/\$(ls /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/components/ | fzf)"
 alias c:all="subl /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/"
+alias c:api="subl /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/app/api/config.js"
 alias c:start="cd /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2/; yarn start"
 alias fe="g codemife"
 alias asc="adb shell screencap -p /sdcard/screen.png;adb pull /sdcard/screen.png;adb shell rm /sdcard/screen.png"
+alias c:dep="c_deps"
+
+#GOLANG
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 #ADDONS BASHMARK
 source ~/.local/bin/bashmarks.sh
