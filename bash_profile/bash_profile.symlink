@@ -76,6 +76,9 @@ alias php55="/Applications/AMPPS/php-5.5/bin/php"
 alias php7="/Applications/MAMP/bin/php/php7.1.8/bin/php"
 alias php="/Applications/MAMP/bin/php/php7.1.8/bin/php"
 
+#JS
+alias npm="pnpm"
+
 #LARAVEL
 #export PATH="~/.composer/vendor/bin/:${PATH}"
 #alias g:m="php artisan generate:model"
