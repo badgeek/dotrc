@@ -28,4 +28,5 @@ brew services start skhd
 brew install vim
 brew install neovim
 brew install tmux
+npm install --global git-recall
 ```

@@ -11,11 +11,11 @@
 	<key>CFBundleIconFile</key>
 	<string>applet</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.ScriptEditor.id.subl-web</string>
+	<string>com.apple.ScriptEditor.id.iterm-web</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>subl-web</string>
+	<string>iterm-web</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -26,10 +26,10 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>Subl Helper</string>
+			<string>Iterm Helper</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>subl-web</string>
+				<string>item-web</string>
 			</array>
 		</dict>
 	</array>
@@ -47,17 +47,17 @@
 		<key>bundlePositionOfDivider</key>
 		<real>0.0</real>
 		<key>dividerCollapsed</key>
-		<false/>
+		<true/>
 		<key>eventLogLevel</key>
 		<integer>2</integer>
 		<key>name</key>
 		<string>ScriptWindowState</string>
 		<key>positionOfDivider</key>
-		<real>550</real>
+		<real>388</real>
 		<key>savedFrame</key>
-		<string>0 33 1440 867 0 0 1440 900 </string>
+		<string>336 144 700 672 0 0 1440 900 </string>
 		<key>selectedTab</key>
-		<string>result</string>
+		<string>description</string>
 	</dict>
 </dict>
 </plist>
