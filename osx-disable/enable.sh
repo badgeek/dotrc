@@ -10,21 +10,21 @@ source services.sh
 
 for agent in "${AGENTS[@]}"
 do
+    sudo mv /System/Library/LaunchAgents/${agent}.plist.bak /System/Library/LaunchAgents/${agent}.plist
     {
         sudo launchctl load -w /System/Library/LaunchAgents/${agent}.plist
         launchctl load -w /System/Library/LaunchAgents/${agent}.plist
     } &> /dev/null
-    sudo mv /System/Library/LaunchAgents/${agent}.plist.bak /System/Library/LaunchAgents/${agent}.plist
     echo "[OK] Agent ${agent} enabled"
 done
 
 # Daemons to enable
 for daemon in "${DAEMONS[@]}"
 do
+    sudo mv /System/Library/LaunchDaemons/${daemon}.plist.bak /System/Library/LaunchDaemons/${daemon}.plist
     {
         sudo launchctl load -w /System/Library/LaunchDaemons/${daemon}.plist
         launchctl load -w /System/Library/LaunchDaemons/${daemon}.plist
     } &> /dev/null
-    sudo mv /System/Library/LaunchDaemons/${daemon}.plist.bak /System/Library/LaunchDaemons/${daemon}.plist
     echo "[OK] Daemon ${daemon} enabled"
 done
