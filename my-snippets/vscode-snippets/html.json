@@ -1,0 +1,24 @@
+{
+	"load static jinja": {
+		"prefix": "load static jinja",
+		"body": [
+			"{% load static %}"
+		],
+		"description": "load static jinja"
+	},
+	"wrap static asset": {
+		"prefix": "wrap static asset",
+		"body": [
+			"{% static '$TM_SELECTED_TEXT' %}"
+		],
+		"description": "wrap static asset"
+	},
+	"wrap django url": {
+		"prefix": "wrap django url",
+		"body": [
+			"{% url '${TM_SELECTED_TEXT/(.*)\\..+$/$1/}' %}"
+		],
+		"description": "wrap django url"
+	}
+}
+

@@ -31,17 +31,17 @@ endsnippet
 
 snippet "Reactjs Choose When then otherwise render"
 <Choose>
-  <When condition={ $1 }>
+  <When condition={$1}>
   	$2
   </When>
   <Otherwise>
   	$3
   </Otherwise>
-<Choose>
+</Choose>
 endsnippet
 
 snippet "Reactjs Choose When render"
-<When condition={ $1 }>
+<When condition={$1}>
 	$2
 </When>
 endsnippet
@@ -84,6 +84,49 @@ $1 = ($2) => {
 }
 endsnippet
 
+snippet "Reactjs classname prop"
+className=""
+endsnippet
+
+snippet "Reactjs onsubmit prop"
+onSubmit=""
+endsnippet
+
+
 snippet "Reactjs export default"
+export default $1;
+endsnippet
+
+snippet "Reactjs map dispatch to props"
+function mapDispatchToProps(dispatch) {
+  return {
+    //applicationLoading: (isLoading) => dispatch(applicationLoading(isLoading)),
+  };
+}
+endsnippet
+
+snippet "Reactjs map state to props"
+const mapStateToProps = createStructuredSelector(
+  {
+    //company: currentCompany,
+    //isCompanyReady: (state) => currentUserData(state).isCompanyReady,
+  },
+);
+endsnippet
+
+snippet "Reactjs connect state and props to redux"
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+endsnippet
+
+
+snippet "Nextjs page template"
+import Link from 'next/link';
+
+const $1 = props => (
+  <div>
+  $2
+  </div>
+)
+
 export default $1;
 endsnippet

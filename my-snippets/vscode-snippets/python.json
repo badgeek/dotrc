@@ -1,40 +1,28 @@
 {
-	"middleware": {
-		"prefix": "mw",
+	"django static files root": {
+		"prefix": "django",
 		"body": [
-			"MIDDLEWARE = [",
-			"    'django.middleware.security.SecurityMiddleware',",
-			"    'django.contrib.sessions.middleware.SessionMiddleware',",
-			"    'django.middleware.common.CommonMiddleware',",
-			"    'django.middleware.csrf.CsrfViewMiddleware',",
-			"    'django.contrib.auth.middleware.AuthenticationMiddleware',",
-			"    'django.contrib.messages.middleware.MessageMiddleware',",
-			"    'django.middleware.clickjacking.XFrameOptionsMiddleware',",
+			"STATIC_ROOT= os.path.join(BASE_DIR, 'static')",
+			"STATIC_URL = '/static/'",
+			"STATICFILES_DIRS = [ ",
+			"    os.path.join(BASE_DIR, 'btre/static')",
 			"]"
 		],
-		"description": "middleware"
+		"description": "django static files root"
 	},
-	"root": {
-		"prefix": "mw",
+	"django url pattern urls.py": {
+		"prefix": "django url pattern urls.py",
 		"body": [
-			"ROOT_URLCONF = 'btre.urls'",
-			""
+			"path('$TM_SELECTED_TEXT', views.$TM_SELECTED_TEXT, name='$TM_SELECTED_TEXT'),"
 		],
-		"description": "mw"
+		"description": "django url pattern urls.py"
 	},
-	"installed": {
-		"prefix": "installed",
+	"django page view render html": {
+		"prefix": "django page view render html",
 		"body": [
-			"INSTALLED_APPS = [",
-			"    'django.contrib.admin',",
-			"    'django.contrib.auth',",
-			"    'django.contrib.contenttypes',",
-			"    'django.contrib.sessions',",
-			"    'django.contrib.messages',",
-			"    'django.contrib.staticfiles',",
-			"    'pages.apps.PagesConfig'",
-			"]"
+			"def ${TM_SELECTED_TEXT/.*\\/(.*)\\..+$/$1/}(request):",
+			"    return render(request,'$TM_SELECTED_TEXT')"
 		],
-		"description": "installed"
+		"description": "django page view render html"
 	}
 }

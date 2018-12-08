@@ -1,0 +1,9 @@
+<snippet>
+<content><![CDATA[
+	find \$cwd/\$RELEASE_PATH -name package_espsynth_index.json -type f -exec sed -i.bak s,https://github.com/esp8266/Arduino/releases/download/\$f/esp8266-\$f.zip,\$RELEASE_URL/board/\${RELEASE_FILENAME_PREFIX}-\$f.zip,g '{}' \;
+
+]]></content>
+<tabTrigger></tabTrigger>
+<description>Bash find and replace recursively</description>
+<scope>source.shell.bash</scope>
+</snippet>
