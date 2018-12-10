@@ -1,0 +1,9 @@
+{
+	"Django http request get variable": {
+		"prefix": "Django http request get variable",
+		"body": [
+			"page = request.GET.get('page')"
+		],
+		"description": "Django http request get variable"
+	}
+}

@@ -1,6 +1,6 @@
 {
-	"django static files root": {
-		"prefix": "django",
+	"django config for static file root path": {
+		"prefix": "django config for static file root path",
 		"body": [
 			"STATIC_ROOT= os.path.join(BASE_DIR, 'static')",
 			"STATIC_URL = '/static/'",
@@ -8,21 +8,148 @@
 			"    os.path.join(BASE_DIR, 'btre/static')",
 			"]"
 		],
-		"description": "django static files root"
+		"description": "django config for static file root path"
 	},
-	"django url pattern urls.py": {
-		"prefix": "django url pattern urls.py",
+	"django wrap selected as urls.py pattern": {
+		"prefix": "django wrap selected as urls.py pattern",
 		"body": [
 			"path('$TM_SELECTED_TEXT', views.$TM_SELECTED_TEXT, name='$TM_SELECTED_TEXT'),"
 		],
-		"description": "django url pattern urls.py"
+		"description": "django wrap selected as urls.py pattern"
 	},
-	"django page view render html": {
-		"prefix": "django page view render html",
+	"django wrap selected as render function for views.py": {
+		"prefix": "django wrap selected as render function for views.py",
 		"body": [
 			"def ${TM_SELECTED_TEXT/.*\\/(.*)\\..+$/$1/}(request):",
 			"    return render(request,'$TM_SELECTED_TEXT')"
 		],
-		"description": "django page view render html"
+		"description": "django wrap selected as render function for views.py"
+	},
+	"django wrap selected add INSTALED_APPS": {
+		"prefix": "django wrap selected add INSTALED_APPS",
+		"body": [
+			"'$TM_SELECTED_TEXT.apps.${TM_SELECTED_TEXT/[a-z]/${0:/upcase}/}Config',"
+		],
+		"description": "django wrap selected add INSTALED_APPS"
+	},
+	"Django get model sort by parameter and filter with parameter": {
+		"prefix": "Django get model sort by parameter and filter with parameter",
+		"body": [
+			"$1 = ${2:ModelName}.objects.order_by('-${3:TableField}').filter(${4:TableField}=${5:True|Value })"
+		],
+		"description": "Django get model sort by parameter and filter with parameter"
+	},
+	"add dictionary key value": {
+		"prefix": "add",
+		"body": [
+			"'${1:Key}' : ${2:Value},"
+		],
+		"description": "add dictionary key value"
+	},
+	"create dictionary": {
+		"prefix": "dict",
+		"body": [
+			"context = {",
+			"",
+			"}"
+		],
+		"description": "create dictionary"
+	},
+	"django get items from model or show 404 not found": {
+		"prefix": "django get single item from model or show 404 not found",
+		"body": [
+			"${1:model} = get_object_or_404(${2:ModelName}, pk=${3:modelname}_id)"
+		],
+		"description": "django get items from model or show 404 not found"
+	},
+	"Django GET http request variable": {
+		"prefix": "Django GET http request variable",
+		"body": [
+			"$1 = request.GET.get('$1')",
+			""
+		],
+		"description": "Django GET http request variable"
+	},
+	"Django get POST http request variable": {
+		"prefix": "Django get POST http request variable",
+		"body": [
+			"$1 = request.POST.get('$1')",
+			""
+		],
+		"description": "Django get POST http request variable"
+	},
+	"Django get http request and use is as a filter search": {
+		"prefix": "Django get http request and use is as a filter search",
+		"body": [
+			"if '${1:keywords}' in request.GET:",
+			"    ${1:keywords} = request.GET.get('${1:keywords}')",
+			"    if ${1:keywords}:",
+			"        queryset_list = queryset_list.filter(${2:tablefield}__${3:icontains,iexact,lte}=${1:keywords})",
+			""
+		],
+		"description": "Django get http request and use is as a filter search"
+	},
+	"Django wrap text get http POST variable": {
+		"prefix": "Django wrap text get http POST variable",
+		"body": [
+			"$TM_SELECTED_TEXT = request.POST.get('$TM_SELECTED_TEXT')",
+			""
+		],
+		"description": "Django wrap text get http POST variable"
+	},
+	"Django wrap text get http GET variable": {
+		"prefix": "Django wrap text get http GET variable",
+		"body": [
+			"$TM_SELECTED_TEXT = request.POST.get('$TM_SELECTED_TEXT')",
+			""
+		],
+		"description": "Django wrap text get http GET variable"
+	},
+	"Python Wrap selected with if conditional": {
+		"prefix": "Python Wrap selected with if conditional",
+		"body": [
+			"if ${1:condition == True}:",
+			"$TM_SELECTED_TEXT"
+		],
+		"description": "Python Wrap selected with if conditional"
+	},
+	"Django add postgress database settings": {
+		"prefix": "Django add postgress database settings",
+		"body": [
+			"'default': {",
+			"\t'ENGINE': 'django.db.backends.postgresql',",
+			"\t'NAME': '${1:DATABASE_NAME}',",
+			"\t'USER': '${2:DATABASE_USER_NAME}',",
+			"\t'PASSWORD' : '${3:PASSWORD}',",
+			"\t'HOST' : '${4:localhost}'",
+			"},",
+			""
+		],
+		"description": "Django add postgress database settings"
+	},
+	"Django static media path settings settings.py": {
+		"prefix": "Django static media path settings settings.py",
+		"body": [
+			"STATIC_ROOT= os.path.join(BASE_DIR, 'static')",
+			"STATIC_URL = '/static/'",
+			"STATICFILES_DIRS = [ ",
+			"    os.path.join(BASE_DIR, 'btre/static')",
+			"]",
+			"",
+			"MEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+			"MEDIA_URL = '/media/'"
+		],
+		"description": "Django static media path settings settings.py"
+	},
+	"Django paginator paginate query result": {
+		"prefix": "Django paginator paginate query result",
+		"body": [
+			"${1:paginator} = Paginator(${2:query_result}, ${3:item_per_page});",
+			"${4:page} = request.GET.get('${4:page}')",
+			"",
+			"paged_${2:query_result} = paginator.get_page(${4:page})",
+			""
+		],
+		"description": "Django paginator paginate query result"
 	}
 }

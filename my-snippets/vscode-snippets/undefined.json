@@ -1,0 +1,15 @@
+{
+	"Django add postgress database settings": {
+		"prefix": "Django add postgress database settings",
+		"body": [
+			"    'default': {",
+			"        'ENGINE': 'django.db.backends.postgresql',",
+			"        'NAME': 'btredb',",
+			"        'USER': 'postgres',",
+			"        'PASSWORD' : '123456',",
+			"        'HOST' : 'localhost'",
+			"    },"
+		],
+		"description": "Django add postgress database settings"
+	}
+}

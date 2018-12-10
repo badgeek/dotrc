@@ -1,24 +1,77 @@
 {
-	"load static jinja": {
-		"prefix": "load static jinja",
+	"django load static jinja": {
+		"prefix": "django load static jinja",
 		"body": [
 			"{% load static %}"
 		],
-		"description": "load static jinja"
+		"description": "django load static jinja"
 	},
-	"wrap static asset": {
-		"prefix": "wrap static asset",
+	"django wrap static asset src": {
+		"prefix": "django wrap static asset src",
 		"body": [
 			"{% static '$TM_SELECTED_TEXT' %}"
 		],
-		"description": "wrap static asset"
+		"description": "django wrap static asset src"
 	},
-	"wrap django url": {
-		"prefix": "wrap django url",
+	"django wrap url": {
+		"prefix": "django wrap url",
 		"body": [
 			"{% url '${TM_SELECTED_TEXT/(.*)\\..+$/$1/}' %}"
 		],
-		"description": "wrap django url"
+		"description": "django wrap url"
+	},
+	"django wrap selected to content block with base": {
+		"prefix": "django wrap selected to content block with base",
+		"body": [
+			"{% extends 'base/base.html' %}",
+			"{% load static %}",
+			"",
+			"{% block content %}",
+			"$TM_SELECTED_TEXT",
+			"{% endblock content %}"
+		],
+		"description": "django wrap selected to content block with base"
+	},
+	"django bootstrap pagination template": {
+		"prefix": "django bootstrap pagination template",
+		"body": [
+			" <div class=\"row\">",
+			"      <div class=\"col-md-12\">",
+			"          {% if $1.has_other_pages %}",
+			"          <ul class=\"pagination\">",
+			"  ",
+			"              {% if $1.has_previous %}",
+			"              <li class=\"page-item\">",
+			"                  <a href=\"?page={{$1.previous_page_number}}\" class=\"page-link\">&laquo;</a>",
+			"              </li>",
+			"              {% else %}",
+			"              <li class=\"page-item disabled\">",
+			"                  <a href=\"#\" class=\"page-link\">&laquo;</a>",
+			"              </li>",
+			"              {% endif %} {% for i in $1.paginator.page_range %} {% if $1.number == i %}",
+			"              <li class=\"page-item active\">",
+			"                  <a href=\"\" class=\"page-link\">{{ i }}</a>",
+			"              </li>",
+			"              {% else %}",
+			"              <li class=\"page-item\">",
+			"                  <a href=\"?page={{i}}\" class=\"page-link\">{{ i }}</a>",
+			"              </li>",
+			"              {% endif %} {% endfor %} {% if $1.has_next %}",
+			"              <li class=\"page-item\">",
+			"                  <a href=\"?page={{$1.next_page_number}}\" class=\"page-link\">&raquo;</a>",
+			"              </li>",
+			"              {% else %}",
+			"              <li class=\"page-item disabled\">",
+			"                  <a href=\"#\" class=\"page-link\">&raquo;</a>",
+			"              </li>",
+			"              {% endif %}",
+			"  ",
+			"          </ul>",
+			"          {% endif %}",
+			"  ",
+			"      </div>",
+			"  </div>"
+		],
+		"description": "django bootstrap pagination template"
 	}
 }
-
