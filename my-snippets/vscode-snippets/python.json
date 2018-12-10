@@ -17,13 +17,14 @@
 		],
 		"description": "django wrap selected as urls.py pattern"
 	},
-	"django wrap selected as render function for views.py": {
-		"prefix": "django wrap selected as render function for views.py",
+	"django wrap selected as render function for views.py ex template/template.html": {
+		"prefix": "django wrap selected as render function for views.py ex template/template.html",
 		"body": [
 			"def ${TM_SELECTED_TEXT/.*\\/(.*)\\..+$/$1/}(request):",
-			"    return render(request,'$TM_SELECTED_TEXT')"
+			"    return render(request,'$TM_SELECTED_TEXT')",
+			""
 		],
-		"description": "django wrap selected as render function for views.py"
+		"description": "django wrap selected as render function for views.py ex template/template.html"
 	},
 	"django wrap selected add INSTALED_APPS": {
 		"prefix": "django wrap selected add INSTALED_APPS",
@@ -46,14 +47,14 @@
 		],
 		"description": "add dictionary key value"
 	},
-	"create dictionary": {
+	"django create dictionary": {
 		"prefix": "dict",
 		"body": [
-			"context = {",
-			"",
+			"${1:context} = {",
+			"	",
 			"}"
 		],
-		"description": "create dictionary"
+		"description": "django create dictionary"
 	},
 	"django get items from model or show 404 not found": {
 		"prefix": "django get single item from model or show 404 not found",
