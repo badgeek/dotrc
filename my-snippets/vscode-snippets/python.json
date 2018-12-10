@@ -33,12 +33,12 @@
 		],
 		"description": "django wrap selected add INSTALED_APPS"
 	},
-	"Django get model sort by parameter and filter with parameter": {
-		"prefix": "Django get model sort by parameter and filter with parameter",
+	"Django [model] get model sort by parameter and filter with parameter": {
+		"prefix": "Django [model] get model sort by parameter and filter with parameter",
 		"body": [
 			"$1 = ${2:ModelName}.objects.order_by('-${3:TableField}').filter(${4:TableField}=${5:True|Value })"
 		],
-		"description": "Django get model sort by parameter and filter with parameter"
+		"description": "Django [model] get model sort by parameter and filter with parameter"
 	},
 	"add dictionary key value": {
 		"prefix": "add",
@@ -51,17 +51,17 @@
 		"prefix": "dict",
 		"body": [
 			"${1:context} = {",
-			"	",
+			"\t",
 			"}"
 		],
 		"description": "django create dictionary"
 	},
-	"django get items from model or show 404 not found": {
-		"prefix": "django get single item from model or show 404 not found",
+	"django [model] get items from model or show 404 not found": {
+		"prefix": "django [model] get single item from model or show 404 not found",
 		"body": [
 			"${1:model} = get_object_or_404(${2:ModelName}, pk=${3:modelname}_id)"
 		],
-		"description": "django get items from model or show 404 not found"
+		"description": "django [model] get items from model or show 404 not found"
 	},
 	"Django GET http request variable": {
 		"prefix": "Django GET http request variable",
@@ -79,8 +79,8 @@
 		],
 		"description": "Django get POST http request variable"
 	},
-	"Django get http request and use is as a filter search": {
-		"prefix": "Django get http request and use is as a filter search",
+	"Django [model] get http request and use is as a filter search": {
+		"prefix": "Django [model] get http request and use is as a filter search",
 		"body": [
 			"if '${1:keywords}' in request.GET:",
 			"    ${1:keywords} = request.GET.get('${1:keywords}')",
@@ -88,7 +88,7 @@
 			"        queryset_list = queryset_list.filter(${2:tablefield}__${3:icontains,iexact,lte}=${1:keywords})",
 			""
 		],
-		"description": "Django get http request and use is as a filter search"
+		"description": "Django [model] get http request and use is as a filter search"
 	},
 	"Django wrap text get http POST variable": {
 		"prefix": "Django wrap text get http POST variable",
@@ -152,5 +152,13 @@
 			""
 		],
 		"description": "Django paginator paginate query result"
+	},
+	"django [model] filter a model by tablefield value and constrain": {
+		"prefix": "django [model] filter a model by tablefield value and constrain",
+		"body": [
+			"${1:queryset_list} = ${1:queryset_list}.filter(${2:table_field}__${3:icontains,iexact,lte}=${4:value})",
+			""
+		],
+		"description": "django [model] filter a model by tablefield value and constrain"
 	}
 }
