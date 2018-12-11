@@ -73,5 +73,45 @@
 			"  </div>"
 		],
 		"description": "django bootstrap pagination template"
-	}
+	},
+	"django [message] alert partial template": {
+		"prefix": "django [message] alert partial template",
+		"body": [
+			"{% if messages %}",
+			"    {% for message in messages %}",
+			"        <div id=\"message\" class=\"container\">",
+			"            <div class=\"alert alert-{{message.tags}} alert-dismissible text-center\" role=\"alert\">",
+			"                <button class=\"close\" type=\"button\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span></button>",
+			"                <strong>",
+			"                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}",
+			"                        Error",
+			"                    {% else %}",
+			"                        {{message.tags|title}}",
+			"                    {% endif %}                        ",
+			"                </strong>",
+			"                {{message}}",
+			"            </div>",
+			"        </div>",
+			"    {% endfor %}        ",
+			"{% endif %}"
+		],
+		"description": "put it inside partials/_alert.html"
+	},
+	"django [html] template include partial": {
+		"prefix": "django [html] template include partial",
+		"body": [
+			"{% include 'partials/_${partial_name}.html' %}",
+			""
+		],
+		"description": ""
+	},
+	"django [html] if user is authenticated then display wrapped": {
+		"prefix": "django [html] if user is authenticated then display wrapped",
+		"body": [
+			"{% if user.is_authenticated %}",
+			"$TM_SELECTED_TEXT",
+			"{% endif %}"
+		],
+		"description": ""
+	}	
 }

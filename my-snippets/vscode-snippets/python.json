@@ -160,5 +160,131 @@
 			""
 		],
 		"description": ""
+	},
+	"django [admin] add model to admin dashboard": {
+		"prefix": "django [admin] add model to admin dashboard",
+		"body": [
+			"from .models import ${1:ModelName}",
+			"# Register your models here.",
+			"class ${1:ModelName}Admin(admin.ModelAdmin):",
+			"    #list_display = ('title', 'is_published', 'price', 'list_date', 'realtor')",
+			"    #list_display_link = ('id', 'title')",
+			"    #list_filter = ('realtor',)",
+			"    #list_editable = ('is_published','price')",
+			"    #search_fields = ('title', 'description', 'price')",
+			"    list_perpage = 25",
+			"",
+			"admin.site.register(${1:ModelName}, ${1:ModelName}Admin);",
+			""
+		],
+		"description": ""
+	},
+	"django [model] create image field upload ": {
+		"prefix": "django [model] create image field upload ",
+		"body": [
+			"${1:profile_picture} = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)",
+			""
+		],
+		"description": ""
+	},
+	"django [model] create date time field with value today": {
+		"prefix": "django [model] create date time field with value today",
+		"body": [
+			"${1:date_active} = models.DateTimeField(default=datetime.now, blank=True)",
+			""
+		],
+		"description": ""
+	},
+	"django [views] return redirect to a page name": {
+		"prefix": "django [views] return redirect to a page name",
+		"body": [
+			"return redirect('${1:page_name}')",
+			""
+		],
+		"description": ""
+	},
+	"django [views] send flash message success error": {
+		"prefix": "django [views] send flash message success error",
+		"body": [
+			"messages.${1:success,error}(request, \"${2:password do not match}\")",
+			""
+		],
+		"description": ""
+	},
+	"django [settings] enable messages init": {
+		"prefix": "django [settings] enable messages init",
+		"body": [
+			"#Messages",
+			"from django.contrib.messages import constants as messages",
+			"MESSAGE_TAGS = {",
+			"    message.ERROR: 'danger'",
+			"}"
+		],
+		"description": ""
+	},
+	"django [views] [message] import message": {
+		"prefix": "django [views] [message] import message",
+		"body": [
+			"from django.contrib import messages"
+		],
+		"description": ""
+	},
+	"django [message] alert show template partials": {
+		"prefix": "django [message] alert show template partials",
+		"body": [
+			"{% if messages %}",
+			"    {% for message in messages %}",
+			"        <div id=\"message\" class=\"container\">",
+			"            <div class=\"alert alert-{{message.tags}} alert-dismissible text-center\" role=\"alert\">",
+			"                <button class=\"close\" type=\"button\" data-dismiss=\"alert\"><span aria-hidden=\"true\">&times;</span></button>",
+			"                <strong>",
+			"                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}",
+			"                        Error",
+			"                    {% else %}",
+			"                        {{message.tags|title}}",
+			"                    {% endif %}                        ",
+			"                </strong>",
+			"                {{message}}",
+			"            </div>",
+			"        </div>",
+			"    {% endfor %}        ",
+			"{% endif %}"
+		],
+		"description": "put it inside partials/_alerts.html"
+	},
+	"django [model] check if model with specified value exists": {
+		"prefix": "django [model] check if model with specified value exists",
+		"body": [
+			"if ${1:ModelName}.objects.filter(${2:TableField}=${3:Value}).exists():",
+			"    pass",
+			"else:",
+			"    pass",
+			""
+		],
+		"description": ""
+	},
+	"django [auth] import user model": {
+		"prefix": "django [auth] import user model",
+		"body": [
+			"from django.contrib.auth.models import User",
+			""
+		],
+		"description": ""
+	},
+	"django [url] urls.py template": {
+		"prefix": "django [url] urls.py template",
+		"body": [
+			"from django.urls import path",
+			"from . import views",
+			"",
+			"urlpatterns = [",
+			"    path('', views.index, name='index'),",
+			"    #path('accounts/', include('accounts.urls')),",
+			""
+			"] ",
+			"",
+			""
+		],
+		"description": ""
 	}
 }

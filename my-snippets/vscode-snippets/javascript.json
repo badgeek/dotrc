@@ -1,0 +1,12 @@
+{
+	"undefined": {
+		"body": [
+			"export function applicationLoading(loading) {",
+			"  return {",
+			"    type: APPLICATION_LOADING,",
+			"    loading,",
+			"  };",
+			"}"
+		]
+	}
+}
