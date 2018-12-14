@@ -20,8 +20,8 @@
 	"django [views] wrap selected as render function for views.py ex template/template.html": {
 		"prefix": "django [views] wrap selected as render function for views.py ex template/template.html",
 		"body": [
-			"def ${TM_SELECTED_TEXT/.*\\/(.*)\\..+$/$1/}(request):",
-			"    return render(request,'$TM_SELECTED_TEXT')",
+			"def ${TM_SELECTED_TEXT/(.*)\\/(.*)\\..+$/$1_$2/}(request):",
+			"    return render(request,'$TM_SELECTED_TEXT', {})",
 			""
 		],
 		"description": "wrap template/template.html -> render function"
@@ -47,8 +47,8 @@
 		],
 		"description": "add dictionary key value"
 	},
-	"django create dictionary": {
-		"prefix": "dict",
+	"django create dictionary context": {
+		"prefix": "django create dictionary context",
 		"body": [
 			"${1:context} = {",
 			"\t",
@@ -286,5 +286,73 @@
 			""
 		],
 		"description": ""
-	}
+	},
+	"django [model] mixins timestamp": {
+		"prefix": "django [model] mixins timestamp",
+		"body": [
+			"class TimestampedModel(models.Model):",
+			"    created = models.DateField(auto_now_add=True)",
+			"    modified = models.DateField(auto_now=True)",
+			"",
+			"    class Meta:",
+			"        abstract = True;",
+			"        "
+		],
+		"description": ""
+	},
+	"[model] define  __str__ string": {
+		"prefix": "[model] define  __str__ string",
+		"body": [
+			"def __str__(self):",
+			"    return self.name"
+		],
+		"description": ""
+	},
+	"django 1.11 [urls] url pattern": {
+		"prefix": "django 1.11 [urls] url pattern",
+		"body": [
+			"url(r'^$1/', $2_views.$3, name= '$1'),"
+		],
+		"description": ""
+	},
+	"django 1.11 [urls] import views as ": {
+		"prefix": "django 1.11 [urls] import views as ",
+		"body": [
+			"from $1 import views as $1_views",
+			""
+		],
+		"description": ""
+	},
+	"django [model] template class": {
+		"prefix": "django [model] template class",
+		"body": [
+			"class ${1:MODEL_NAME}(${2:models.Model}):",
+			"    $3",
+			"    def __str__(self):",
+			"        return self.name",
+			""
+		],
+		"description": ""
+	},
+	"django [views] function view template": {
+		"prefix": "django [views] function view template",
+		"body": [
+			"def $1(request):",
+			"    return render(request,'$2.html', {})"
+		],
+		"description": ""
+	},
+	"django [views] function view template with context": {
+		"prefix": "django [views] function view template with context",
+		"body": [
+			"def ${1:index}(request):",
+			"    ",
+			"    context = {",
+			"        ",
+			"    }",
+			"    ",
+			"    return render(request,'${2:index}.html', context)"
+		],
+		"description": ""
+	}	
 }

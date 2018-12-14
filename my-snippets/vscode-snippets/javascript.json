@@ -8,5 +8,166 @@
 			"  };",
 			"}"
 		]
+	},
+	"[react] styled component get props theme": {
+		"prefix": "[react] styled component get props theme",
+		"body": [
+			"${props => props.theme.accentColor};"
+		],
+		"description": ""
+	},
+	"wrap console.log": {
+		"prefix": "wrap console.log",
+		"body": [
+			"console.log('$TM_SELECTED_TEXT');",
+			"$TM_SELECTED_TEXT"
+		],
+		"description": ""
+	},
+	"[rjs] create action function redux": {
+		"prefix": "[rjs] create action function redux",
+		"body": [
+			"const ${1:fetchUserData} = () => {",
+			"    return {",
+			"        type: '${2:FETCH_USER_DATA}',",
+			"        payload: {",
+			"            value: \"value\"",
+			"        }",
+			"    }",
+			"}"
+		],
+		"description": ""
+	},
+	"[rjs] wrap create action function redux": {
+		"prefix": "[rjs] wrap create action function redux",
+		"body": [
+			"",
+			"//",
+			"// Action Dispatch ${TM_SELECTED_TEXT/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g}",
+			"// Description:",
+			"//",
+			"",
+			"export const ${TM_SELECTED_TEXT/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g} = 'app/ComponentName/${TM_SELECTED_TEXT/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g}';",
+			"",
+			"const ${TM_SELECTED_TEXT/(.*)_(.*)\\..+$/$1$2/} = ($1) => {",
+			"    return {",
+			"        type: ${TM_SELECTED_TEXT/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g},",
+			"        payload: {",
+			"            ${2:key}: \"${3:value}\"",
+			"        }",
+			"    }",
+			"}"
+		],
+		"description": ""
+	},
+	"[rjs] create action type constant redux": {
+		"prefix": "[rjs] create action type constant redux",
+		"body": [
+			"export const $1 = 'app/${2:ComponentName}/$1';",
+			""
+		],
+		"description": ""
+	},
+	"[rjs] create pure component": {
+		"prefix": "[rjs] create pure component",
+		"body": [
+			"const ${1:ComponentName} = ({name}) => (",
+			" <div>{`Hi ${name}`}</div>",
+			");",
+			""
+		],
+		"description": ""
+	},
+	"[rjs] create functional component props": {
+		"prefix": "[rjs] create functional component props",
+		"body": [
+			"const ${1:ComponentName} = props => {",
+			"    return (",
+			"      <div>",
+			"        <h1>{props.name}</h1>",
+			"        <p>{props.bio}</p>",
+			"      </div>",
+			"    );",
+			"  };"
+		],
+		"description": ""
+	},
+	"[rjs] create react component props with argument": {
+		"prefix": "[rjs] create react component props with argument",
+		"body": [
+			"const ${1:ComponentName} = ({ name, bio }) => {",
+			"    return (",
+			"      <div>",
+			"        <h1>{name}</h1>",
+			"        <p>{bio}</p>",
+			"      </div>",
+			"    );",
+			"  };"
+		],
+		"description": ""
+	},
+	"[rjs] import react": {
+		"prefix": "[rjs] import react",
+		"body": [
+			"import React from ‘react’;"
+		],
+		"description": ""
+	},
+	"[rjs] create class component": {
+		"prefix": "[rjs] create class component",
+		"body": [
+			"class ${1:ClassName} extends React.Component {",
+			"    render() {",
+			"      return <h1>Hello, {this.props.name}</h1>;",
+			"    }",
+			"  }",
+			"",
+			"export default ${1:ClassName};"
+		],
+		"description": ""
+	},
+	"[rjs] map array to jsx component": {
+		"prefix": "[rjs] map array to jsx component",
+		"body": [
+			"{${1:Array}.map( (item) => <h2 key={item.name} >{item.description}</h2> ) }"
+		],
+		"description": ""
+	},
+	"[js] filter number": {
+		"prefix": "[js] filter number",
+		"body": [
+			"let even = number.filter((val,key) => {",
+			"  return val % 2 === 0;",
+			"});"
+		],
+		"description": ""
+	},
+	"[rjs] create class component with state init": {
+		"prefix": "[rjs] create class component with state init",
+		"body": [
+			"class ${1:ClassName} extends React.Component {",
+			"",
+			"    constructor (props) {",
+			"      super(props)",
+			"      this.state = { }",
+			"    }",
+			"    ",
+			"    render() {",
+			"      return <h1>Hello, {this.props.name}</h1>;",
+			"    }",
+			"  }",
+			"",
+			"export default ${1:ClassName};"
+		]
+	},
+	"[rjs] set state from input value": {
+		"prefix": "[rjs] set state from input value",
+		"body": [
+			"update${1:InputValue}(evt) {",
+			"  this.setState({",
+			"    ${1:InputValue}: evt.target.value",
+			"});"
+		],
+		"description": ""
 	}
 }
