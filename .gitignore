@@ -1,1 +1,6 @@
 .DS_Store
+
+bin/codemi_create_user
+bin/codemi_create_user_skillomo
+bin/codemipull
+bin/ccontainer
