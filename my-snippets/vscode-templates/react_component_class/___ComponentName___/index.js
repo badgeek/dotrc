@@ -15,7 +15,7 @@ class ___ComponentName___ extends React.Component {
     }
     
     render() {
-      return <h1 className="h1_banner">Hello, {this.props.name}</h1>;
+      return <h1 className="h1_banner">___ComponentName___ Hello, {this.props.name}</h1>;
     }
 
     // Set default props

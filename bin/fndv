@@ -1,0 +1,8 @@
+#!/bin/bash
+
+STASH_LIST=`ag "$1" ./ | fzf | cut -d':' -f -1 `
+# if [ -n "$STASH_LIST" ] ; then
+# 	STASH_DIR=`dirname $STASH_LIST`
+#     code "$STASH_DIR"    
+# fi
+
