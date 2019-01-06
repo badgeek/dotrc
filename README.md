@@ -28,5 +28,7 @@ brew services start skhd
 brew install vim
 brew install neovim
 brew install tmux
+brew install reattach-to-user-namespace
 npm install --global git-recall
+pip install --user tmuxp
 ```
