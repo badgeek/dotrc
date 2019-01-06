@@ -62,6 +62,6 @@ lalt + shift - left  : chunkc tiling::window --use-temporary-ratio -0.1 --adjust
 # ctrl + alt - 6 : chunkc tiling::window --send-to-monitor 6 
 
 
-cmd - return : ~/dotfiles/bin/iterm-new
+cmd - return : ~/dotfiles/bin/ala-new
 
 
