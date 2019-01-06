@@ -1,6 +1,68 @@
-source-file "${HOME}/dotfiles/tmux/tmux-themepack/powerline/block/green.tmuxtheme"
+source-file "${HOME}/dotfiles/tmux/tmux-themepack/powerline/block/cyan.tmuxtheme"
+
+#plugins
 set -g @plugin 'jimeh/tmux-themepack'
-set -g @themepack 'powerline/block/blue'
+set -g @themepack 'powerline/block/rek'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-yank'
+#set -g @plugin 'thewtex/tmux-mem-cpu-load'
+#set -g @continuum-boot-options 'iterm,fullscreen'
+set -g @continuum-boot 'on'
 
+#general settings
+set -g default-terminal "screen-256color"
+set -g history-limit 20000
+set -g buffer-limit 20
+#set -sg escape-time 0
+set -g display-time 1500
+set -g remain-on-exit off
+#set -g repeat-time 300
+setw -g allow-rename off
+setw -g automatic-rename off
+setw -g aggressive-resize on
+set-option -g default-command "reattach-to-user-namespace -l bash"
+
+#unbind-default
+unbind [    # paste-buffer
+unbind ] 
+
+#settings
+bind -r [ previous-window
+bind -r ] next-window
+
+
+#bind -n C-w  previous-window
+# Open current directory
+bind o run-shell "open #{pane_current_path}"
+
+bind -n C-k send-keys -R \; clear-history
+set -g mouse on
+#using C-a as prefix
+set -g prefix C-a
+# Set parent terminal title to reflect current window in tmux session 
+set -g set-titles on
+set -g set-titles-string "#I:#W"
+# Start index of window/pane with 1, because we're humans, not computers
+set -g base-index 1
+setw -g pane-base-index 1
+# Edit configuration and reload
+bind C-e new-window -n 'tmux.conf' "sh -c '\${EDITOR:-nvim} ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"Config reloaded\"'"
+# Reload tmux configuration 
+bind C-r source-file ~/.tmux.conf \; display "Config reloaded"
+# new window and retain cwd
+bind c new-window -c "#{pane_current_path}"
+# Prompt to rename window right after it's created
+#set-hook -g after-new-window 'command-prompt -I "#{window_name}" "rename-window '%%'"'
+# Zoom pane
+bind + resize-pane -Z
+# When scrolling with mouse wheel, reduce number of scrolled rows per tick to "2" (default is 5)
+bind -T copy-mode-vi WheelUpPane       select-pane \; send-keys -X -N 2 scroll-up
+bind -T copy-mode-vi WheelDownPane select-pane \; send-keys -X -N 2 scroll-down
+
+# Link window
+bind L command-prompt -p "Link window from (session:window): " "link-window -s %% -a"
+
+#set -g status-right "#[fg=green]#($TMUX_PLUGIN_MANAGER_PATH/tmux-mem-cpu-load/tmux-mem-cpu-load --colors --powerline-right --interval 2)#[default]"
+set -g status-position top
 run -b '~/.tmux/plugins/tpm/tpm'
-
