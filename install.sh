@@ -162,6 +162,7 @@ install_myconfig() {
   link_file "$DOTFILES_ROOT/my-snippets/sublime-snippets" "/Users/xcorex/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
   link_file "$DOTFILES_ROOT/my-snippets/vscode-templates" "/Users/xcorex/.vscode/templates"
   link_file "$DOTFILES_ROOT/sublime/Default (OSX).sublime-keymap" "/Users/xcorex/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap"
+  link_file "$DOTFILES_ROOT/neovim/init.vim" "/Users/xcorex/.config/nvim/init.vim"
 }
 
 # setup_gitconfig

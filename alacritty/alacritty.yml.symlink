@@ -48,7 +48,7 @@ window:
   #     - none: Neither borders nor title bar
   #     - buttonless: Title bar, transparent background and title bar buttons
   #     - transparent: Title bar, transparent background, but no title bar buttons
-  decorations: transparent
+  decorations: buttonless
 
   # When true, alacritty starts maximized.
   start_maximized: true
@@ -282,10 +282,14 @@ live_config_reload: true
 #
 # You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
+
 shell:
   program: /bin/bash
   args:
-        - --login  
+    - --login
+    - -c
+    - 'tmux ls && read tmux_session && tmux attach -t ${tmux_session:-default} || tmux new -s ${tmux_session:-default}'
+
 # Key bindings
 #
 # Key bindings are specified as a list of objects. Each binding will specify
