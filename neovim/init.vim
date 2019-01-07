@@ -10,28 +10,44 @@ let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 call plug#begin('~/.vim/plugged')
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 "Plug 'mattn/emmet-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
-"Plug 'Valloric/MatchTagAlways'
+Plug 'Valloric/MatchTagAlways'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'ryanoasis/vim-devicons'
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'ayu-theme/ayu-vim' 
 Plug 'Yggdroot/indentLine' 
+Plug 'metakirby5/codi.vim'
+Plug 'takac/vim-hardtime'
+Plug 'chrisbra/NrrwRgn'
+
+"Filetype
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+"Documentation helper
+Plug 'rhysd/devdocs.vim'
+
+"Snippets
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+
+"Theme
+"Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ayu-theme/ayu-vim' 
+Plug 'KeitaNakamura/neodark.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'ryanoasis/vim-devicons'
+
+"Completion
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+
 "if has('nvim')
 ""  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "else
@@ -47,6 +63,9 @@ Plug 'joshdick/onedark.vim'
 call plug#end()
 
 
+let g:clipboard = {'copy': {'+': 'pbcopy', '*': 'pbcopy'}, 'paste': {'+': 'pbpaste', '*': 'pbpaste'}, 'name': 'pbcopy', 'cache_enabled': 0}
+set clipboard+=unnamedplus
+
 set mouse=a
 
 set termguicolors     " enable true colors support
@@ -56,7 +75,7 @@ syntax on
 colorscheme ayu
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'seoul256',
       \ }
 
 set encoding=UTF-8
@@ -228,4 +247,9 @@ map ; :Files<CR>
 "xmap <C-m>     <Plug>(neosnippet_expand_target)
 "let g:deoplete#enable_at_startup = 1
 
+
+
+inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
 
