@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /Volumes/LOCALBRAIN/Projects/Codemi/frontend-v2
+git push origin dev_temp
