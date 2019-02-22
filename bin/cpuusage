@@ -1,0 +1,2 @@
+#!/bin/sh
+vtop --update-interval 5000 -t monokai
