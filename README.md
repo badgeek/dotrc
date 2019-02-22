@@ -29,6 +29,8 @@ brew install vim
 brew install neovim
 brew install tmux
 brew install reattach-to-user-namespace
+brew install bat
+npm install -g commitizen
 npm install --global git-recall
 pip install --user tmuxp
 ```

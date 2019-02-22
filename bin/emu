@@ -1,0 +1,4 @@
+#!/bin/sh
+export QEMU_AUDIO_DRV=none && emulator -avd 4_WVGA_Nexus_S_API_28   -show-kernel -verbose -no-boot-anim
+adb shell wm size 400x711
+adb shell wm density 150

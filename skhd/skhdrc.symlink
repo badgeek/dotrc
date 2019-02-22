@@ -61,6 +61,11 @@ lalt + shift - left  : chunkc tiling::window --use-temporary-ratio -0.1 --adjust
 # ctrl + alt - 5 : chunkc tiling::window --send-to-monitor 5
 # ctrl + alt - 6 : chunkc tiling::window --send-to-monitor 6 
 
+# fast desktop switch
+ctrl - left : chunkc tiling::desktop --focus prev
+ctrl - right : chunkc tiling::desktop --focus next
+
+
 
 cmd - return : ~/dotfiles/bin/ala-new
 

@@ -1,4 +1,4 @@
-source-file "${HOME}/dotfiles/tmux/tmux-themepack/powerline/block/cyan.tmuxtheme"
+source-file "${HOME}/dotfiles/tmux/tmux-themepack/powerline/block/yellow.tmuxtheme"
 
 #plugins
 set -g @plugin 'jimeh/tmux-themepack'

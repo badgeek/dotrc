@@ -1,0 +1,14 @@
+#adb shell input keyevent 26 #Pressing the lock button
+adb shell input touchscreen swipe 400 1000 470 29 #Swipe UP
+adb shell monkey -p sleekr.apps.hr 1
+sleep 10
+adb shell input tap 609 733
+sleep 1
+adb shell input tap 531 1001
+sleep 1
+adb shell input tap 413 996
+sleep 1
+adb shell input tap 365 1189
+adb shell input tap 393 1130
+sleep 5
+adb stop sleekr.apps.hr
