@@ -24,8 +24,8 @@
 		],
 		"description": ""
 	},
-	"[rjs] create action function redux": {
-		"prefix": "[rjs] create action function redux",
+	"@rjs create action function redux": {
+		"prefix": "@rjs create action function redux",
 		"body": [
 			"const ${1:fetchUserData} = () => {",
 			"    return {",
@@ -38,8 +38,8 @@
 		],
 		"description": ""
 	},
-	"[rjs] wrap create action function redux": {
-		"prefix": "[rjs] wrap create action function redux",
+	"@rjs wrap create action function redux": {
+		"prefix": "@rjs wrap create action function redux",
 		"body": [
 			"",
 			"//",
@@ -60,16 +60,16 @@
 		],
 		"description": ""
 	},
-	"[rjs] create action type constant redux": {
-		"prefix": "[rjs] create action type constant redux",
+	"@rjs create action type constant redux": {
+		"prefix": "@rjs create action type constant redux",
 		"body": [
 			"export const $1 = 'app/${2:ComponentName}/$1';",
 			""
 		],
 		"description": ""
 	},
-	"[rjs] create pure component": {
-		"prefix": "[rjs] create pure component",
+	"@rjs create pure component": {
+		"prefix": "@rjs create pure component",
 		"body": [
 			"const ${1:ComponentName} = ({name}) => (",
 			" <div>{`Hi ${name}`}</div>",
@@ -78,8 +78,8 @@
 		],
 		"description": ""
 	},
-	"[rjs] create functional component props": {
-		"prefix": "[rjs] create functional component props",
+	"@rjs create functional component props": {
+		"prefix": "@rjs create functional component props",
 		"body": [
 			"const ${1:ComponentName} = props => {",
 			"    return (",
@@ -92,8 +92,8 @@
 		],
 		"description": ""
 	},
-	"[rjs] create react component props with argument": {
-		"prefix": "[rjs] create react component props with argument",
+	"@rjs create react component props with argument": {
+		"prefix": "@rjs create react component props with argument",
 		"body": [
 			"const ${1:ComponentName} = ({ name, bio }) => {",
 			"    return (",
@@ -106,15 +106,15 @@
 		],
 		"description": ""
 	},
-	"[rjs] import react": {
-		"prefix": "[rjs] import react",
+	"@rjs import react": {
+		"prefix": "@rjs import react",
 		"body": [
 			"import React from ‘react’;"
 		],
 		"description": ""
 	},
-	"[rjs] create class component": {
-		"prefix": "[rjs] create class component",
+	"@rjs create class component": {
+		"prefix": "@rjs create class component",
 		"body": [
 			"class ${1:ClassName} extends React.Component {",
 			"    render() {",
@@ -126,8 +126,8 @@
 		],
 		"description": ""
 	},
-	"[rjs] map array to jsx component": {
-		"prefix": "[rjs] map array to jsx component",
+	"@rjs map array to jsx component": {
+		"prefix": "@rjs map array to jsx component",
 		"body": [
 			"{${1:Array}.map( (item) => <h2 key={item.name} >{item.description}</h2> ) }"
 		],
@@ -142,8 +142,8 @@
 		],
 		"description": ""
 	},
-	"[rjs] create class component with state init": {
-		"prefix": "[rjs] create class component with state init",
+	"@rjs create class component with state init": {
+		"prefix": "@rjs create class component with state init",
 		"body": [
 			"class ${1:ClassName} extends React.Component {",
 			"",
@@ -160,8 +160,8 @@
 			"export default ${1:ClassName};"
 		]
 	},
-	"[rjs] set state from input value": {
-		"prefix": "[rjs] set state from input value",
+	"@rjs handle set state from input value event": {
+		"prefix": "@rjs handle set state from input value event",
 		"body": [
 			"update${1:InputValue}(evt) {",
 			"  this.setState({",
@@ -169,5 +169,477 @@
 			"});"
 		],
 		"description": ""
+	},
+	"@rjs router import": {
+		"prefix": "@rjs router import",
+		"body": [
+			"import { BrowserRouter } from \"react-router-dom\";",
+			"import { Link, Route, Switch } from \"react-router-dom\";"
+		],
+		"description": ""
+	},
+	"@rjs router define path": {
+		"prefix": "@rjs router define path",
+		"body": [
+			"<Route path=\"/${TM_SELECTED_TEXT:component}\" component={${TM_SELECTED_TEXT:component}} />"
+		],
+		"description": ""
+	},
+	"@rjs router wrap selection to switch": {
+		"prefix": "@rjs router wrap selection to switch",
+		"body": [
+			"<Switch>",
+			"${TM_SELECTED_TEXT}",
+			"</Switch>"
+		],
+		"description": ""
+	},
+	"@rjs router wrap selection to BrowserRouter": {
+		"prefix": "@rjs router wrap selection to BrowserRouter",
+		"body": [
+			"<BrowserRouter>",
+			"${TM_SELECTED_TEXT}",
+			"</BrowserRouter>"
+		],
+		"description": ""
+	},
+	"@rjs create arrow function": {
+		"prefix": "@rjs create arrow function",
+		"body": [
+			"const $1 = () => {",
+			"",
+			"}"
+		],
+		"description": ""
+	},
+	"@bs button primary": {
+		"prefix": "@bs button primary",
+		"body": [
+			"<button type=\"button\" className=\"btn btn-primary btn-squared\">Primary</button>",
+			""
+		]
+	},
+	"@rjs router create link": {
+		"prefix": "@rjs router create link",
+		"body": [
+			"<Link to=\"/${TM_SELECTED_TEXT:$1}\">${TM_SELECTED_TEXT:$1}</Link>"
+		],
+		"description": ""
+	},
+	"@bs section 2 column equal ": {
+		"prefix": "@bs section 2 column equal ",
+		"body": [
+			"<!-- 2 colum 4, 8 -->",
+			"<div class=\"py-5\">",
+			"  <div class=\"container\">",
+			"    <div class=\"row\">",
+			"      <div class=\"col-md-4\"><!-- col 1 --></div>",
+			"      <div class=\"col-md-8\"><!-- col 2 --></div>",
+			"    </div>",
+			"  </div>",
+			"</div>"
+		],
+		"description": ""
+	},
+	"@bs section 4 column equal ": {
+		"prefix": "@bs section 4 column equal ",
+		"body": [
+			"<!-- 4 col @ 3 -->",
+			"<div class=\"py-5\">",
+			"  <div class=\"container\">",
+			"    <div class=\"row\">",
+			"      <div class=\"col-md-3\"><!-- col 1 --></div>",
+			"      <div class=\"col-md-3\"><!-- col 2 --></div>",
+			"      <div class=\"col-md-3\"><!-- col 3 --></div>",
+			"      <div class=\"col-md-3\"><!-- col 4 --></div>",
+			"    </div>",
+			"  </div>",
+			"</div>",
+			""
+		],
+		"description": ""
+	},
+	"@bs section 1 column full ": {
+		"prefix": "@bs section 1 column full",
+		"body": [
+			"<!-- 1 section @ 12 -->",
+			"<div class=\"py-5\">",
+			"  <div class=\"container\">",
+			"    <div class=\"row\">",
+			"      <div class=\"col-md-12\"></div>",
+			"      <!-- col 1 -->",
+			"    </div>",
+			"  </div>",
+			"</div>"
+		],
+		"description": ""
+	},
+	"@bs card container + 1 card template": {
+		"prefix": "@bs card container + 1 card template",
+		"body": [
+			"<!-- card container -->",
+			"<div class=\"album py-5 bg-light\">",
+			"        <div class=\"container\">",
+			"            <div class=\"row\">",
+			"                <!-- card 1 -->",
+			"                <div class=\"col-md-4\">",
+			"                    <div class=\"card mb-4 box-shadow\">",
+			"                        <img class=\"card-img-top\" src=\"http://pinegrow.com/placeholders/img14.jpg\"/>",
+			"                        <div class=\"card-body\">",
+			"                            <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>",
+			"                            <div class=\"d-flex justify-content-between align-items-center\">",
+			"                                <div class=\"btn-group\">",
+			"                                    <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>",
+			"                                    <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>",
+			"                                </div>",
+			"                                <small class=\"text-muted\">9 mins</small>",
+			"                            </div>",
+			"                        </div>",
+			"                    </div>",
+			"                </div>",
+			"                <!-- end card 1 -->",
+			"            </div>",
+			"        </div>",
+			"    </div>",
+			"    <!-- end card container -->"
+		],
+		"description": ""
+	},
+	"@bs footer template simple": {
+		"prefix": "@bs footer template simple",
+		"body": [
+			"<!-- simple footer -->",
+			"<footer class=\"text-muted\">",
+			"    <div class=\"container\">",
+			"        <p class=\"float-right\"> <a href=\"#\">Back to top</a> </p>",
+			"        <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>",
+			"        <p>New to Bootstrap? <a href=\"http://getbootstrap.com/docs/4.0/\">Visit the homepage</a> or read our <a href=\"http://getbootstrap.com/docs/4.0/getting-started/\">getting",
+			"                started guide</a>.</p>",
+			"    </div>",
+			"</footer>"
+		]
+	},
+	"@bs form group inputbox template": {
+		"prefix": "@bs form group inputbox template",
+		"body": [
+			"<div class=\"form-group row\"> <label for=\"inputmailh\" class=\"col-2 col-form-label\">E-mail</label>",
+			"    <div class=\"col-10\">",
+			"      <input type=\"email\" class=\"form-control\" id=\"inputmailh\" placeholder=\"mail@example.com\"> </div>",
+			"</div>"
+		],
+		"description": ""
+	},
+	"@bs footer template advanced": {
+		"prefix": "@bs footer template advanced",
+		"body": [
+			"<div class=\"py-3\">",
+			"        <div class=\"container\">",
+			"          <div class=\"row\">",
+			"            <div class=\"col-lg-3 col-6 p-3\">",
+			"              <h5> <b>Main</b> </h5>",
+			"              <ul class=\"list-unstyled\">",
+			"                <li> <a href=\"#\">Home</a> </li>",
+			"                <li> <a href=\"#\">Features</a> </li>",
+			"                <li> <a href=\"#\">Pricing</a> </li>",
+			"              </ul>",
+			"            </div>",
+			"            <div class=\"col-lg-3 col-6 p-3\">",
+			"              <h5> <b>Others</b> </h5>",
+			"              <ul class=\"list-unstyled\">",
+			"                <li> <a href=\"#\">FAQ</a> </li>",
+			"                <li> <a href=\"#\">Resources</a> </li>",
+			"                <li> <a href=\"#\">Career</a> </li>",
+			"              </ul>",
+			"            </div>",
+			"            <div class=\"col-lg-3 col-md-6 p-3\">",
+			"              <h5> <b>About</b> </h5>",
+			"              <p class=\"mb-0\"> I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls.</p>",
+			"            </div>",
+			"            <div class=\"col-lg-3 col-md-6 p-3\">",
+			"              <h5> <b>Follow us</b> </h5>",
+			"              <div class=\"row\">",
+			"                <div class=\"col-md-12 d-flex align-items-center justify-content-between my-2\"> <a href=\"#\">",
+			"                    <i class=\"d-block fa fa-facebook-official text-muted fa-lg mr-2\"></i>",
+			"                  </a> <a href=\"#\">",
+			"                    <i class=\"d-block fa fa-instagram text-muted fa-lg mx-2\"></i>",
+			"                  </a> <a href=\"#\">",
+			"                    <i class=\"d-block fa fa-google-plus-official text-muted fa-lg mx-2\"></i>",
+			"                  </a> <a href=\"#\">",
+			"                    <i class=\"d-block fa fa-pinterest-p text-muted fa-lg mx-2\"></i>",
+			"                  </a> <a href=\"#\">",
+			"                    <i class=\"d-block fa fa-reddit text-muted fa-lg mx-2\"></i>",
+			"                  </a> <a href=\"#\">",
+			"                    <i class=\"d-block fa fa-twitter text-muted fa-lg ml-2\"></i>",
+			"                  </a> </div>",
+			"              </div>",
+			"            </div>",
+			"          </div>",
+			"          <div class=\"row\">",
+			"            <div class=\"col-md-12 text-center\">",
+			"              <p class=\"mb-0 mt-2\">© 2014-2018 Pingendo. All rights reserved</p>",
+			"            </div>",
+			"          </div>",
+			"        </div>",
+			"      </div>"
+		],
+		"description": ""
+	},
+	"@bs navbar template": {
+		"prefix": "@bs navbar template",
+		"body": [
+			"<nav class=\"navbar navbar-expand-lg navbar-light\">",
+			"    <div class=\"container\"> <a class=\"navbar-brand text-primary\" href=\"#\">",
+			"        <i class=\"fa d-inline fa-lg fa-circle-o\"></i>",
+			"        <b> BRAND</b>",
+			"      </a> <button class=\"navbar-toggler navbar-toggler-right border-0\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar5\">",
+			"        <span class=\"navbar-toggler-icon\"></span>",
+			"      </button>",
+			"      <div class=\"collapse navbar-collapse\" id=\"navbar5\">",
+			"        <ul class=\"navbar-nav mr-auto\">",
+			"          <li class=\"nav-item\"> <a class=\"nav-link\" href=\"#\">Features</a> </li>",
+			"          <li class=\"nav-item\"> <a class=\"nav-link\" href=\"#\">Pricing</a> </li>",
+			"          <li class=\"nav-item\"> <a class=\"nav-link\" href=\"#\">Product</a> </li>",
+			"        </ul>",
+			"        <ul class=\"navbar-nav ml-auto\">",
+			"          <li class=\"nav-item\"> <a class=\"nav-link\" href=\"#\">Services</a> </li>",
+			"          <li class=\"nav-item\"> <a class=\"nav-link\" href=\"#\">About</a> </li>",
+			"          <li class=\"nav-item\"> <a class=\"nav-link\" href=\"#\">FAQ</a> </li>",
+			"        </ul> <a class=\"btn btn-outline-primary navbar-btn ml-md-2\">Contact us</a> </div>",
+			"    </div>",
+			"  </nav>"
+		],
+		"description": ""
+	},
+	"@bs template base": {
+		"prefix": "@bs template base",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html>",
+			"",
+			"<head>",
+			"  <meta charset=\"utf-8\">",
+			"  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+			"  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\" type=\"text/css\">",
+			"  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">",
+			"  <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">",
+			"</head>",
+			"",
+			"<body >",
+			"  <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>",
+			"  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js\" integrity=\"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49\" crossorigin=\"anonymous\"></script>",
+			"  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\" crossorigin=\"anonymous\"></script>",
+			"</body>",
+			"",
+			"{% block content %}",
+			"    ",
+			"{% endblock content %}",
+			"    ",
+			"</html>"
+		],
+		"description": ""
+	},
+	"@bs call to action section template": {
+		"prefix": "@bs call to action section template",
+		"body": [
+			"<!-- call to action -->",
+			"<div class=\"py-5 section-aquamarine\" id=\"register\" >",
+			"        <div class=\"container\">",
+			"          <div class=\"row\">",
+			"            <div class=\"col-md-8 text-md-left text-center\">",
+			"              <h1 class=\"text-white\">Registrations are open</h1>",
+			"              <p>Pre-register to get a priority access to the event. Fares will be published later on.&nbsp; <br>Get the maximum from the lectures together with the possibility of joining exclusive side-events.</p>",
+			"            </div>",
+			"            <div class=\"col-md-4 align-self-center animate-in-right\">",
+			"              <a href=\"#\" class=\"btn btn-lg btn-light my-3\">Register now</a>",
+			"            </div>",
+			"          </div>",
+			"        </div>",
+			"</div>"
+		],
+		"description": ""
+	},
+	"@bs section announcement parallax": {
+		"prefix": "@bs section announcement parallax",
+		"body": [
+			"<!-- section parallax -->",
+			"<div class=\"py-5 section-parallax\" style=\"background-image: url(&quot;assets/conference/venue.jpg&quot;);\">",
+			"    <div class=\"container my-5 bg-light p-4\">",
+			"      <div class=\"row mx-auto\">",
+			"        <div class=\"col-md-12\">",
+			"          <h1 class=\"mb-3\">About the event</h1>",
+			"          <p class=\"\">Three days immersion in the world of UX/UI prototyping. Meet the most important design influencer of the moment, assist to speeches given by worldwide known designers and much, much more. The unique possibility to enhance your professionality",
+			"            with the smallest effort.</p>",
+			"          <a href=\"#schedule\" class=\"btn btn-outline-primary btn-lg m-2\">Schedule</a>",
+			"          <a class=\"btn btn-primary btn-lg m-2\" href=\"#register\">Register</a>",
+			"        </div>",
+			"      </div>",
+			"    </div>",
+			"  </div>"
+		],
+		"description": ""
+	},
+	"asdsad": {
+		"prefix": "asdsad",
+		"body": [
+			"            <div className=\"form-group col-md-7\">",
+			"              <input",
+			"                type=\"text\"",
+			"                className=\"form-control\"",
+			"                id=\"inputCity\"",
+			"                defaultValue=\"New York\"",
+			"              />",
+			"            </div>"
+		],
+		"description": ""
+	},
+	"@bs form row two column template": {
+		"prefix": "@bs form row two column template",
+		"body": [
+			" <div className=\"form-row\">",
+			"            <div className=\"form-group col-md-7\">",
+			"              <input",
+			"                type=\"text\"",
+			"                className=\"form-control\"",
+			"                id=\"inputCity\"",
+			"                defaultValue=\"New York\"",
+			"              />",
+			"            </div>",
+			"            <div className=\"form-group col-md-5\">",
+			"              <select id=\"inputState\" className=\"form-control\">",
+			"                <option>Choose...</option>",
+			"                <option>...</option>",
+			"              </select>",
+			"            </div>",
+			"          </div>"
+		]
+	},
+	"@bs form container template": {
+		"prefix": "@bs form container template",
+		"body": [
+			"<div className=\"col-sm-12 col-md-12\">",
+			"  <strong className=\"text-muted d-block mb-2\">Forms</strong>",
+			"  <form>",
+			"",
+			"  </form>",
+			"</div>"
+		],
+		"description": ""
+	},
+	"@bs import bootstrap css react": {
+		"prefix": "@bs import bootstrap css react",
+		"body": [
+			"import \"bootstrap/dist/css/bootstrap.min.css\";",
+			""
+		],
+		"description": ""
+	},
+	"@rjs map list array to component render": {
+		"prefix": "@rjs map list array to component render",
+		"body": [
+			"const CommentList = ({ comments }) => (",
+			"  <div className=\"commentList\">",
+			"      {comments.map(({ author, id, text }) => (",
+			"          <Comment author={author} key={id} >{text}</Comment>",
+			"      ))}",
+			"  </div>",
+			");"
+		],
+		"description": ""
+	},
+	"@rjs import react redux middleware": {
+		"prefix": "@rjs import react redux middleware",
+		"body": [
+			"import { createStore, applyMiddleware, compose } from \"redux\";",
+			"import createSagaMiddleware from \"redux-saga\";",
+			"import { Provider } from \"react-redux\";"
+		],
+		"description": ""
+	},
+	"@rjs redux api call constant": {
+		"prefix": "@rjs redux api call constant",
+		"body": [
+			"export const $1_REQUEST = 'app/$2/$1_REQUEST';",
+			"export const $1_SUCCESS = 'app/$2/$1_SUCCESS';",
+			"export const $1_ERROR = 'app/$2/$1_ERROR';"
+		],
+		"description": ""
+	},
+	"[rjs] connect to reducer": {
+		"body": [
+			"",
+			"const mapStateToProps = (state) => ({",
+			"  ",
+			"})",
+			"",
+			"const mapDispatchToProps = (dispatch, ownProps) => {",
+			"    return {",
+			"        fetchActiveUser: () => {",
+			"            dispatch(doFetchActiverUser())",
+			"        },",
+			"        fetchCourse: () => {",
+			"            dispatch(doFetchCourse())",
+			"        }        ",
+			"    }",
+			"}",
+			"",
+			"export default connect(mapStateToProps, mapDispatchToProps)(index)",
+			""
+		]
+	},
+	"[rjs] provider template reducer": {
+		"prefix": "[rjs] provider template reducer",
+		"body": [
+			"import React from \"react\";",
+			"import ReactDOM from \"react-dom\";",
+			"import { Provider } from \"react-redux\";",
+			"import { createStore } from \"redux\";",
+			"",
+			"import App from \"./components/app\";",
+			"import reducers from \"./reducers\";",
+			"",
+			"ReactDOM.render(",
+			"  <Provider store={createStore(reducers)}>",
+			"    <App />",
+			"  </Provider>,",
+			"  document.querySelector(\".container\")",
+			");"
+		],
+		"description": ""
+	},
+	"[rjs] mapstate mapdispatch to props and connect redux": {
+		"prefix": "[rjs] mapstate mapdispatch to props and connect redux",
+		"body": [
+			"",
+			"",
+			"const mapStateToProps = (state) => {",
+			"    return {",
+			"      items: state.items",
+			"    };",
+			"  };",
+			"  ",
+			"  const mapDispatchToProps = dispatch => {",
+			"    return {",
+			"      addItem: () => {",
+			"        dispatch(addItem())",
+			"      }",
+			"    };",
+			"  };",
+			"  ",
+			"  export default connect(mapStateToProps, mapDispatchToProps)(App);"
+		],
+		"description": ""
+	},
+	"@rjs proptypes": {
+		"prefix": "@rjs proptypes",
+		"body": [
+			"  static propTypes = {",
+			"    propFunc: PropTypes.func.isRequired,",
+			"    propString: PropTypes.string.isRequired,",
+			"    propObject: PropTypes.object.isRequired,",
+			"    propNumber: PropTypes.number.isRequired,",
+			"    propBool: PropTypes.bool.isRequired,",
+			"  };"
+		],
+		"description": "@rjs proptypes"
 	}
 }

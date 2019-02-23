@@ -1,15 +1,9 @@
 {
-	"Django add postgress database settings": {
-		"prefix": "Django add postgress database settings",
+	"[react] styled component get props theme": {
+		"prefix": "[react] styled component get props theme",
 		"body": [
-			"    'default': {",
-			"        'ENGINE': 'django.db.backends.postgresql',",
-			"        'NAME': 'btredb',",
-			"        'USER': 'postgres',",
-			"        'PASSWORD' : '123456',",
-			"        'HOST' : 'localhost'",
-			"    },"
+			"${props => props.theme.accentColor};"
 		],
-		"description": "Django add postgress database settings"
+		"description": ""
 	}
 }

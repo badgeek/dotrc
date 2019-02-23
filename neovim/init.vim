@@ -23,16 +23,17 @@ Plug 'majutsushi/tagbar'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine' 
-Plug 'metakirby5/codi.vim'
-Plug 'takac/vim-hardtime'
-Plug 'chrisbra/NrrwRgn'
+"Plug 'metakirby5/codi.vim'
+"Plug 'takac/vim-hardtime'
+"Plug 'chrisbra/NrrwRgn'
+"Plug 'dhruvasagar/vim-zoom'
 
 "Filetype
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 "Documentation helper
-Plug 'rhysd/devdocs.vim'
+"Plug 'rhysd/devdocs.vim'
 
 "Snippets
 "Plug 'SirVer/ultisnips'
@@ -41,12 +42,12 @@ Plug 'rhysd/devdocs.vim'
 "Theme
 "Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ayu-theme/ayu-vim' 
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'joshdick/onedark.vim'
+"Plug 'KeitaNakamura/neodark.vim'
+"Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 
 "Completion
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 "if has('nvim')
 ""  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -104,7 +105,7 @@ let NERDTreeDirArrows = 1
 "    \  },
 "  \}
 
-set guifont=DroidSansMono_Nerd_Font:h11
+set guifont=DroidSansMono_Nerd_Font:h12
 
 
 " Use Vim settings, rather then Vi settings (much better!).
