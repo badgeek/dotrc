@@ -33,6 +33,7 @@ brew install bat
 npm install -g commitizen
 npm install --global git-recall
 pip install --user tmuxp
+npm install -g osx-wifi-cli
 ```
 
 # Shortcut Keyboard

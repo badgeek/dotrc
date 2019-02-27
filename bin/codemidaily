@@ -1,3 +1,5 @@
 #!/bin/sh
 
-git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --since="6am" | grep Budi
+LOG=`git log --author="Budi" --pretty=format:'%s' --graph --date=short --since="6am"`
+echo "$LOG"
+echo "$LOG" | pbcopy
