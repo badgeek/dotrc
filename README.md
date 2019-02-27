@@ -36,7 +36,7 @@ pip install --user tmuxp
 ```
 
 # Shortcut Keyboard
-
+```
 * Vscode
 
 F1 - Explorer Bar
@@ -57,3 +57,4 @@ F10 - Focus Monitor 2
 
 ALT + KEYPAD_4,6,8,2 - Focus on Window
 Keypad * - Focus Alacritty
+```
