@@ -49,12 +49,20 @@ Keypad / - Toggle vscode console
 Keypad 4 - Jump prev
 Keypad 6 - Jump next
 
+* Tmux
+
+capslock - ctrl+A
+
 * Global
 
+capslock F1, F2 - Send window to monitor 1 and 2
 F9 - Focus Monitor 1
 F10 - Focus Monitor 2
-
-
 ALT + KEYPAD_4,6,8,2 - Focus on Window
 Keypad * - Focus Alacritty
+
+Keypad 5 - Toggle desktop 5 and 6
+Keypad 2 - Toggle desktop 1 and 2
+
+
 ```
