@@ -1,5 +1,11 @@
 #!/bin/sh
 
 LOG=`git log --author="Budi" --pretty=format:'%s' --graph --date=short --since="6am"`
-echo "$LOG"
+
+let i=0
+while read -r line; do
+let i++
+    echo "\`$i\` $line"
+done <<< "$LOG"
+
 echo "$LOG" | pbcopy
