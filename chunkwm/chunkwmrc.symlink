@@ -51,8 +51,8 @@ chunkc set window_float_center           1
 chunkc set window_region_locked          1
 
 
-chunkc set mouse_move_window             \"fn 1\"
-chunkc set mouse_resize_window           \"fn 2\"
+chunkc set mouse_move_window             \"ctrl cmd alt 1\"
+chunkc set mouse_resize_window           \"ctrl cmd alt 2\"
 
 chunkc set preselect_border_color        0xffd75f5f
 chunkc set preselect_border_width        5
@@ -76,7 +76,7 @@ chunkc core::load tiling.so
 chunkc core::load purify.so
 
 # chunkc tiling::rule --owner \"Sublime Text\" --state float
-# chunkc tiling::rule --owner Safari --state float
+chunkc tiling::rule --owner Safari --state float
 chunkc tiling::rule --owner Dash --state float
 chunkc tiling::rule --owner Tower --state float
 chunkc tiling::rule --owner Finder --state float
@@ -97,5 +97,17 @@ chunkc tiling::rule --owner \"Spek\" --state float
 chunkc tiling::rule --owner \"The Unarchiver\" --state float
 chunkc tiling::rule --owner \"Transmission\" --state float
 chunkc tiling::rule --owner \"Disk Inventory X\" --state float
+chunkc tiling::rule --owner 'Sublime Text' --state float
+chunkc tiling::rule --owner 'Cypress' --state float
+chunkc tiling::rule --owner 'Karabiner-EventViewer' --state float
+chunkc tiling::rule --owner 'Karabiner-Elements' --state float
+chunkc tiling::rule --owner 'Alacritty'  --desktop 1
+chunkc tiling::rule --owner 'Wey'  --desktop 2
+chunkc tiling::rule --owner 'Sourcetree' --state float
+chunkc tiling::rule --owner 'Folx' --state float
+chunkc tiling::rule --owner 'IINA' --state float
+chunkc tiling::rule --owner 'Keka' --state float
+chunkc tiling::rule --owner 'Calendar' --state float
+chunkc tiling::rule --owner 'Google Chrome' --name frontend-v2 --desktop 3
 
 chunkwm --load-sa
